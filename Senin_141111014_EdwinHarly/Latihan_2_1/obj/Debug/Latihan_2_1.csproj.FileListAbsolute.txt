@@ -1,8 +1,0 @@
-D:\E-Learning\Semester 5\.NET Lanjutan\Senin_141111014_EdwinHarly\Latihan_2_1\bin\Debug\Latihan_2_1.exe.config
-D:\E-Learning\Semester 5\.NET Lanjutan\Senin_141111014_EdwinHarly\Latihan_2_1\bin\Debug\Latihan_2_1.exe
-D:\E-Learning\Semester 5\.NET Lanjutan\Senin_141111014_EdwinHarly\Latihan_2_1\bin\Debug\Latihan_2_1.pdb
-D:\E-Learning\Semester 5\.NET Lanjutan\Senin_141111014_EdwinHarly\Latihan_2_1\obj\Debug\Latihan_2_1.Form1.resources
-D:\E-Learning\Semester 5\.NET Lanjutan\Senin_141111014_EdwinHarly\Latihan_2_1\obj\Debug\Latihan_2_1.Properties.Resources.resources
-D:\E-Learning\Semester 5\.NET Lanjutan\Senin_141111014_EdwinHarly\Latihan_2_1\obj\Debug\Latihan_2_1.csproj.GenerateResource.Cache
-D:\E-Learning\Semester 5\.NET Lanjutan\Senin_141111014_EdwinHarly\Latihan_2_1\obj\Debug\Latihan_2_1.exe
-D:\E-Learning\Semester 5\.NET Lanjutan\Senin_141111014_EdwinHarly\Latihan_2_1\obj\Debug\Latihan_2_1.pdb
