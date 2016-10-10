@@ -34,6 +34,12 @@ namespace Latihan_3_1
 
             toolStripComboBox2.Items.AddRange(fonts.ToArray());
             toolStripComboBox1.Items.AddRange(fontSize.ToArray());
+
+            foreach (System.Reflection.PropertyInfo prop in typeof(Color).GetProperties())
+            {
+                if (prop.PropertyType.FullName == "System.Drawing.Color")
+                    toolStripComboBox3.Items.Add(prop.Name);
+            }
         }
     }
 }
