@@ -60,14 +60,14 @@
             this.toolStripComboBox3});
             this.toolStrip1.Location = new System.Drawing.Point(119, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(437, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(404, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripComboBox1
             // 
             this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(75, 27);
+            this.toolStripComboBox1.Size = new System.Drawing.Size(75, 25);
             this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
             // 
             // toolStripButton3
@@ -76,7 +76,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 24);
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton3.Text = "toolStripButton3";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -86,7 +86,7 @@
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 24);
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton4.Text = "toolStripButton4";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -96,20 +96,21 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripComboBox2
             // 
             this.toolStripComboBox2.Name = "toolStripComboBox2";
-            this.toolStripComboBox2.Size = new System.Drawing.Size(121, 27);
+            this.toolStripComboBox2.Size = new System.Drawing.Size(121, 25);
             this.toolStripComboBox2.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox2_SelectedIndexChanged);
             // 
             // toolStripComboBox3
             // 
             this.toolStripComboBox3.Name = "toolStripComboBox3";
-            this.toolStripComboBox3.Size = new System.Drawing.Size(121, 27);
+            this.toolStripComboBox3.Size = new System.Drawing.Size(121, 25);
+            this.toolStripComboBox3.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox3_SelectedIndexChanged);
             // 
             // Form1
             // 

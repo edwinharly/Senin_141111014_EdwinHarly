@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace Latihan_3_1
 {
+
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -99,20 +101,21 @@ namespace Latihan_3_1
 
         private void toolStripComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            richTextBox1.Font = new Font(toolStripComboBox2.SelectedItem.ToString(), (float)toolStripComboBox1.SelectedIndex + 1);
+            if (richTextBox1.SelectionFont != null)
+            {
+                
+                
+            }
+            FontStyle currentStyle = richTextBox1.SelectionFont.Style;
+
+            richTextBox1.SelectionFont = new Font(toolStripComboBox2.SelectedItem.ToString(), (float)toolStripComboBox1.SelectedIndex + 1, FontStyle.Regular | currentStyle);
             richTextBox1.Update();
         }
 
         // #################### function ini belum siap
         private void changeFont()
         {
-            if (richTextBox1.SelectionFont != null)
-            {
-                if (richTextBox1.SelectionLength > 0)
-                    richTextBox1.SelectionFont = new Font(toolStripComboBox2.SelectedItem.ToString(), (float)toolStripComboBox1.SelectedIndex + 1 FontStyle.Bold | richTextBox1.SelectionFont.Style);
-                else
-                    richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Bold | richTextBox1.Font.Style);
-            }
+            
         }
 
         private void ToggleBold()
@@ -120,9 +123,19 @@ namespace Latihan_3_1
             if (richTextBox1.SelectionFont != null)
             {
                 if (richTextBox1.SelectionLength > 0)
-                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Bold | richTextBox1.SelectionFont.Style);
+                {
+                    if (richTextBox1.SelectionFont.Style == FontStyle.Bold)
+                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                    else
+                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | richTextBox1.Font.Style);
+                }
                 else
-                    richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Bold | richTextBox1.Font.Style);
+                {
+                    if (richTextBox1.SelectionFont.Style == FontStyle.Bold)
+                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                    else
+                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | richTextBox1.Font.Style);
+                }
             }
         }
 
@@ -131,20 +144,38 @@ namespace Latihan_3_1
             if (richTextBox1.SelectionFont != null)
             {
                 if (richTextBox1.SelectionLength > 0)
-                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Italic | richTextBox1.SelectionFont.Style);
+                {
+                    if (richTextBox1.SelectionFont.Style == FontStyle.Italic)
+                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                    else
+                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | richTextBox1.Font.Style);
+                }
                 else
-                    richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic | richTextBox1.Font.Style);
+                {
+                    if (richTextBox1.SelectionFont.Style == FontStyle.Italic)
+                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                    else
+                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | richTextBox1.Font.Style);
+                }
             }
         }
 
         private void ToggleUnderline()
         {
-            if (richTextBox1.SelectionFont != null)
+            if (richTextBox1.SelectionLength > 0)
             {
-                if (richTextBox1.SelectionLength > 0)
-                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Underline | richTextBox1.SelectionFont.Style);
+                if (richTextBox1.SelectionFont.Style == FontStyle.Underline)
+                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular | richTextBox1.Font.Style);
                 else
-                    richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Underline | richTextBox1.Font.Style);
+                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline | richTextBox1.Font.Style);
+            }
+
+            else
+            {
+                if (richTextBox1.SelectionFont.Style == FontStyle.Underline)
+                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                else
+                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline | richTextBox1.Font.Style);
             }
         }
 
@@ -161,6 +192,16 @@ namespace Latihan_3_1
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             ToggleUnderline();
+        }
+
+        private void toolStripComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!toolStripComboBox3.Focused) 
+            {
+                return; 
+            } 
+
+            richTextBox1.SelectionColor = Color.FromName(toolStripComboBox3.Text);
         }
     }
 }
