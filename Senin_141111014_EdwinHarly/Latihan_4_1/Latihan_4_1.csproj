@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{88437C5D-6C05-4E66-8FE4-C87AAC728041}</ProjectGuid>
+    <ProjectGuid>{1D679583-F59A-4C89-8ED3-7FBAC4A0BDBF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Latihan_3_1</RootNamespace>
