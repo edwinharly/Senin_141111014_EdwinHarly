@@ -64,7 +64,7 @@ namespace Latihan_2_1
                 monthCalendar1.AddBoldedDate(tmp);
                 monthCalendar1.UpdateBoldedDates();
             }
-            catch (Exception err)
+            catch (Exception)
             {
                 MessageBox.Show("Maaf, tanggal yang anda pilih tidak tersedia, silakan coba lagi");
             }
@@ -79,7 +79,7 @@ namespace Latihan_2_1
                 monthCalendar1.RemoveBoldedDate(tmp);
                 monthCalendar1.UpdateBoldedDates();
             }
-            catch (Exception err)
+            catch (Exception)
             {
                 MessageBox.Show("Maaf, tanggal yang anda pilih tidak tersedia, silakan coba lagi");
             }
