@@ -12,25 +12,35 @@ namespace Latihan_5_1
 {
     public partial class Form2 : Form
     {
-        
-        public Form2()
+        public Form1 form1;
+
+        public Form2(Form1 form1)
         {
             InitializeComponent();
-            
-        }
-
-        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            Form3 newMDIChild = new Form3();
-            // Set the Parent Form of the Child window.
-            newMDIChild.MdiParent = this;
-            // Display the new form.
-            newMDIChild.Show();
+            this.form1 = form1;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 frm;
+            
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (e.Node.Text == "Background Color")
+            {
+                Form3 form3 = new Form3(form1);
+                form3.Show();
+            }
+            
+            
         }
     }
 }

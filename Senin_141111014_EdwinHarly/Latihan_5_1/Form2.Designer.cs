@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Background Color");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Theme", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Background Color");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Theme", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
@@ -38,15 +38,15 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(1, 1);
             this.treeView1.Name = "treeView1";
-            treeNode5.Name = "Node1";
-            treeNode5.Text = "Background Color";
-            treeNode6.Name = "Node0";
-            treeNode6.Text = "Theme";
+            treeNode3.Name = "Node1";
+            treeNode3.Text = "Background Color";
+            treeNode4.Name = "Node0";
+            treeNode4.Text = "Theme";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode4});
             this.treeView1.Size = new System.Drawing.Size(146, 315);
             this.treeView1.TabIndex = 0;
-            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // Form2
             // 
@@ -54,9 +54,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 317);
             this.Controls.Add(this.treeView1);
-            this.IsMdiContainer = true;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.ShowInTaskbar = false;
+            this.Text = "Theme";
+            this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 

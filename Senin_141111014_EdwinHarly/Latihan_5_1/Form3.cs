@@ -13,11 +13,11 @@ namespace Latihan_5_1
 {
     public partial class Form3 : Form
     {
-        private readonly Form1 _form1;
-        public Form3()
+        public Form1 form1;
+        public Form3(Form1 form1)
         {
             InitializeComponent();
-     
+            this.form1 = form1;
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -65,8 +65,8 @@ namespace Latihan_5_1
             {
                 return;
             }
-            Form1.richTextBox1.BackColor = Color.FromName(comboBox1.Text);
-
+            form1.bgColor = comboBox1.Text;
+            
         }
     }
 }

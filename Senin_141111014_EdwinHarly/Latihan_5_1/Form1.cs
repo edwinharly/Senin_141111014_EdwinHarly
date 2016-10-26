@@ -11,10 +11,22 @@ using System.Windows.Forms;
 
 namespace Latihan_5_1
 {
-
-
     public partial class Form1 : Form
     {
+        public string bgColor
+        {
+            get
+            {
+                return this.rtbBackColor;
+
+            }
+            set
+            {
+                richTextBox1.BackColor = Color.FromName(value);
+            }
+        }
+
+        public string rtbBackColor;
         public Form1()
         {
             InitializeComponent();
@@ -269,12 +281,9 @@ namespace Latihan_5_1
 
         private void editorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 newMDIChild = new Form2();
-            // Set the Parent Form of the Child window.
-            newMDIChild.MdiParent = this;
-            // Display the new form.
-            newMDIChild.Show();
-
+            Form2 form2 = new Form2(this);
+            form2.Show();
         }
+            
     }
 }
