@@ -286,5 +286,32 @@ namespace Latihan_5_1
             form2.Show();
         }
 
+        private void richTextBox1_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void richTextBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show();
+            }
+        }
+
+        private void richTextBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                richTextBox1.ContextMenuStrip = contextMenuStrip1;
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // cut
+
+        }
     }
 }
