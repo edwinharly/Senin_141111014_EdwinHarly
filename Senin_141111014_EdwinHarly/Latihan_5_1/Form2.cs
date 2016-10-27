@@ -37,6 +37,7 @@ namespace Latihan_5_1
             if (e.Node.Text == "Background Color")
             {
                 Form3 form3 = new Form3(form1);
+                form3.MdiParent = this;
                 form3.Show();
             }
             

@@ -32,7 +32,7 @@ namespace Latihan_5_1
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load_1(object sender, EventArgs e)
         {
             List<string> fonts = new List<string>();
             List<string> fontSize = new List<string>();
@@ -141,16 +141,17 @@ namespace Latihan_5_1
                 if (richTextBox1.SelectionLength > 0)
                 {
                     if (richTextBox1.SelectionFont.Style == FontStyle.Bold)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                        richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular | richTextBox1.SelectionFont.Style);
                     else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | richTextBox1.Font.Style);
+                        richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold | richTextBox1.SelectionFont.Style);
                 }
                 else
                 {
                     if (richTextBox1.SelectionFont.Style == FontStyle.Bold)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                        richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular | richTextBox1.SelectionFont.Style);
                     else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold | richTextBox1.Font.Style);
+                        richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Bold | richTextBox1.SelectionFont.Style);
+                    
                 }
             }
         }
@@ -162,16 +163,16 @@ namespace Latihan_5_1
                 if (richTextBox1.SelectionLength > 0)
                 {
                     if (richTextBox1.SelectionFont.Style == FontStyle.Italic)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                        richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular | richTextBox1.SelectionFont.Style);
                     else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | richTextBox1.Font.Style);
+                        richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic | richTextBox1.SelectionFont.Style);
                 }
                 else
                 {
                     if (richTextBox1.SelectionFont.Style == FontStyle.Italic)
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                        richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular | richTextBox1.SelectionFont.Style);
                     else
-                        richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic | richTextBox1.Font.Style);
+                        richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Italic | richTextBox1.SelectionFont.Style);
                 }
             }
         }
@@ -181,17 +182,17 @@ namespace Latihan_5_1
             if (richTextBox1.SelectionLength > 0)
             {
                 if (richTextBox1.SelectionFont.Style == FontStyle.Underline)
-                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular | richTextBox1.Font.Style);
+                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular | richTextBox1.SelectionFont.Style);
                 else
-                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline | richTextBox1.Font.Style);
+                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Underline | richTextBox1.SelectionFont.Style);
             }
 
             else
             {
                 if (richTextBox1.SelectionFont.Style == FontStyle.Underline)
-                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular | richTextBox1.Font.Style);
+                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Regular | richTextBox1.SelectionFont.Style);
                 else
-                    richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline | richTextBox1.Font.Style);
+                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.Size, FontStyle.Underline | richTextBox1.SelectionFont.Style);
             }
         }
 
@@ -284,6 +285,6 @@ namespace Latihan_5_1
             Form2 form2 = new Form2(this);
             form2.Show();
         }
-            
+
     }
 }

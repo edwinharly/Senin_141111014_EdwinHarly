@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Background Color");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Theme", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Background Color");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Theme", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
@@ -38,12 +38,12 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(1, 1);
             this.treeView1.Name = "treeView1";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Background Color";
-            treeNode4.Name = "Node0";
-            treeNode4.Text = "Theme";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Background Color";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "Theme";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(146, 315);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -54,6 +54,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 317);
             this.Controls.Add(this.treeView1);
+            this.IsMdiContainer = true;
             this.Name = "Form2";
             this.ShowInTaskbar = false;
             this.Text = "Theme";
