@@ -311,7 +311,25 @@ namespace Latihan_5_1
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             // cut
+            richTextBox1.Cut();
+        }
 
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // copy
+            richTextBox1.Copy();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //paste
+            richTextBox1.Paste();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //delete
+            richTextBox1.SelectedText = "";
         }
     }
 }
