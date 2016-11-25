@@ -331,5 +331,10 @@ namespace Latihan_5_1
             //delete
             richTextBox1.SelectedText = "";
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
