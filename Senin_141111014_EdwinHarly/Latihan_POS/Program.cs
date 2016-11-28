@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace volleyball_problem
+namespace Latihan_POS
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace volleyball_problem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new l());
+            Application.Run(new Form1());
         }
     }
 }

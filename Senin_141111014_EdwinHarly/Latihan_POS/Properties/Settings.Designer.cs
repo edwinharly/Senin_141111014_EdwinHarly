@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace volleyball_problem.Properties
+namespace Latihan_POS.Properties
 {
 
 
