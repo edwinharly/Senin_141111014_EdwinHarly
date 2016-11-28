@@ -16,5 +16,16 @@ namespace Latihan_POS
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void barangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DaftarBarang newForm = new DaftarBarang();
+            newForm.Show();
+        }
     }
 }
