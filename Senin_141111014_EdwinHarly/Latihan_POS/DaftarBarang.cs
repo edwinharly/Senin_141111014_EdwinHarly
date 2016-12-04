@@ -8,11 +8,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MaterialSkin.Controls;
 
 namespace Latihan_POS
 {
     public partial class DaftarBarang : Form
     {
+        static MySqlConnection conn = new MySqlConnection(connectionString);
+        static string connectionString = "server=localhost;uid=root;" + "pwd=root;database=pos_schema;";
+        static MySqlCommand comm = conn.CreateCommand();
+
+        public string generateID()
+        {
+            
+            Random rnd = new Random();
+            string res = rnd.Next(999999999).ToString();
+            comm.CommandText = "SELECT ID from barang WHERE ID = @nome";
+            comm.Parameters.AddWithValue("@nome", res);
+            try
+            {
+                conn.Open();
+                string queryRes = "";
+                MySqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    queryRes += reader.ToString();
+                }
+                MessageBox.Show(queryRes);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            conn.Close();
+            return res;
+        }
+
         public DaftarBarang()
         {
             InitializeComponent();
@@ -20,12 +51,12 @@ namespace Latihan_POS
 
         private void DaftarBarang_Load(object sender, EventArgs e)
         {
-
+            generateID();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = "";
+            txtKode.Text = txtNama.Text = txtJlhAwal.Text = txtHargaHPP.Text = txtHargaJual.Text = "";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -35,23 +66,39 @@ namespace Latihan_POS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn;
-            string connectionString = "server=localhost;uid=root;" + "pwd=root;database=pos_schema;";
             
-
+            
             try
             {
-                conn = new MySqlConnection(connectionString);
                 conn.Open();
                 //MessageBox.Show(conn.ConnectionString);
-                string sql = "insert into barang values ('" +this.textBox1.Text+ "', '" + this.textBox2.Text + "', '" + this.textBox3.Text + "', '" + this.textBox4.Text + "', '" + this.textBox5.Text + "', '" + this.textBox6.Text + "');";
+                string sql = "insert into barang values ('" +this.txtID.Text+ "', '" + this.txtKode.Text + "', '" + this.txtNama.Text + "', '" + this.txtJlhAwal.Text + "', '" + this.txtHargaHPP.Text + "', '" + this.txtHargaJual.Text + "', NOW(), NOW());";
+                MySqlCommand comm = new MySqlCommand(sql, conn);
 
+                if (comm.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Data berhasil disimpan !");
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal disimpan !");
+                }
+                conn.Close();
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                if (ex.Message.IndexOf("Duplicate") >= 1)
+                {
+
+                }
             }
             
+        }
+
+        private void materialLabel4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
