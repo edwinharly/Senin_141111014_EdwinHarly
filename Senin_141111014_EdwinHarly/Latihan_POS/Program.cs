@@ -16,7 +16,7 @@ namespace Latihan_POS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormBarang());
+            Application.Run(new FormPOS());
         }
     }
 }

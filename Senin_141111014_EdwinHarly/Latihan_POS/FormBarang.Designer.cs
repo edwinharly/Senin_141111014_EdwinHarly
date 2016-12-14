@@ -31,14 +31,15 @@
             this.formSkin1 = new FlatUI.FormSkin();
             this.productsTabControl = new FlatUI.FlatTabControl();
             this.addProductsPage = new System.Windows.Forms.TabPage();
-            this.btnCancel = new FlatUI.FlatButton();
-            this.btnSave = new FlatUI.FlatButton();
-            this.txtHrgJual = new FlatUI.FlatTextBox();
-            this.txtHrgHPP = new FlatUI.FlatTextBox();
-            this.txtJlhAwal = new FlatUI.FlatTextBox();
-            this.txtNama = new FlatUI.FlatTextBox();
-            this.txtKode = new FlatUI.FlatTextBox();
-            this.txtID = new FlatUI.FlatTextBox();
+            this.txtAddID = new FlatUI.FlatLabel();
+            this.addAlertBox = new FlatUI.FlatAlertBox();
+            this.btnAddCancel = new FlatUI.FlatButton();
+            this.btnAddSave = new FlatUI.FlatButton();
+            this.txtAddHrgJual = new FlatUI.FlatTextBox();
+            this.txtAddHrgHPP = new FlatUI.FlatTextBox();
+            this.txtAddJlhAwal = new FlatUI.FlatTextBox();
+            this.txtAddNama = new FlatUI.FlatTextBox();
+            this.txtAddKode = new FlatUI.FlatTextBox();
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel5 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
@@ -46,15 +47,36 @@
             this.flatLabel2 = new FlatUI.FlatLabel();
             this.flatLabel1 = new FlatUI.FlatLabel();
             this.updateProductsPage = new System.Windows.Forms.TabPage();
-            this.deleteProductsPage = new System.Windows.Forms.TabPage();
+            this.txtUpdateID = new FlatUI.FlatLabel();
+            this.btnCancelEdit = new FlatUI.FlatButton();
+            this.btnUpdate = new FlatUI.FlatButton();
+            this.txtUpdateHargaJual = new FlatUI.FlatTextBox();
+            this.txtUpdateHargaHPP = new FlatUI.FlatTextBox();
+            this.txtUpdateJlhAwal = new FlatUI.FlatTextBox();
+            this.txtUpdateNama = new FlatUI.FlatTextBox();
+            this.txtUpdateKode = new FlatUI.FlatTextBox();
+            this.flatLabel7 = new FlatUI.FlatLabel();
+            this.flatLabel8 = new FlatUI.FlatLabel();
+            this.flatLabel9 = new FlatUI.FlatLabel();
+            this.flatLabel10 = new FlatUI.FlatLabel();
+            this.flatLabel11 = new FlatUI.FlatLabel();
+            this.flatLabel12 = new FlatUI.FlatLabel();
             this.viewProductsPage = new System.Windows.Forms.TabPage();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatMax1 = new FlatUI.FlatMax();
             this.flatClose1 = new FlatUI.FlatClose();
-            this.flatAlertBox1 = new FlatUI.FlatAlertBox();
+            this.btnDelete = new FlatUI.FlatButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flatButton1 = new FlatUI.FlatButton();
+            this.flatButton2 = new FlatUI.FlatButton();
+            this.flatButton3 = new FlatUI.FlatButton();
+            this.flatButton4 = new FlatUI.FlatButton();
             this.formSkin1.SuspendLayout();
             this.productsTabControl.SuspendLayout();
             this.addProductsPage.SuspendLayout();
+            this.updateProductsPage.SuspendLayout();
+            this.viewProductsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // formSkin1
@@ -76,7 +98,7 @@
             this.formSkin1.Size = new System.Drawing.Size(813, 410);
             this.formSkin1.TabIndex = 0;
             this.formSkin1.TabStop = false;
-            this.formSkin1.Text = "Products";
+            this.formSkin1.Text = "Products - Point of Sale";
             // 
             // productsTabControl
             // 
@@ -87,7 +109,6 @@
             this.productsTabControl.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
             this.productsTabControl.Controls.Add(this.addProductsPage);
             this.productsTabControl.Controls.Add(this.updateProductsPage);
-            this.productsTabControl.Controls.Add(this.deleteProductsPage);
             this.productsTabControl.Controls.Add(this.viewProductsPage);
             this.productsTabControl.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.productsTabControl.ItemSize = new System.Drawing.Size(120, 40);
@@ -102,15 +123,15 @@
             // addProductsPage
             // 
             this.addProductsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.addProductsPage.Controls.Add(this.flatAlertBox1);
-            this.addProductsPage.Controls.Add(this.btnCancel);
-            this.addProductsPage.Controls.Add(this.btnSave);
-            this.addProductsPage.Controls.Add(this.txtHrgJual);
-            this.addProductsPage.Controls.Add(this.txtHrgHPP);
-            this.addProductsPage.Controls.Add(this.txtJlhAwal);
-            this.addProductsPage.Controls.Add(this.txtNama);
-            this.addProductsPage.Controls.Add(this.txtKode);
-            this.addProductsPage.Controls.Add(this.txtID);
+            this.addProductsPage.Controls.Add(this.txtAddID);
+            this.addProductsPage.Controls.Add(this.addAlertBox);
+            this.addProductsPage.Controls.Add(this.btnAddCancel);
+            this.addProductsPage.Controls.Add(this.btnAddSave);
+            this.addProductsPage.Controls.Add(this.txtAddHrgJual);
+            this.addProductsPage.Controls.Add(this.txtAddHrgHPP);
+            this.addProductsPage.Controls.Add(this.txtAddJlhAwal);
+            this.addProductsPage.Controls.Add(this.txtAddNama);
+            this.addProductsPage.Controls.Add(this.txtAddKode);
             this.addProductsPage.Controls.Add(this.flatLabel6);
             this.addProductsPage.Controls.Add(this.flatLabel5);
             this.addProductsPage.Controls.Add(this.flatLabel4);
@@ -122,148 +143,156 @@
             this.addProductsPage.Padding = new System.Windows.Forms.Padding(3);
             this.addProductsPage.Size = new System.Drawing.Size(805, 318);
             this.addProductsPage.TabIndex = 6;
-            this.addProductsPage.Text = "Add";
+            this.addProductsPage.Text = "New";
             // 
-            // btnCancel
+            // txtAddID
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnCancel.Location = new System.Drawing.Point(601, 206);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Rounded = false;
-            this.btnCancel.Size = new System.Drawing.Size(106, 32);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.txtAddID.AutoSize = true;
+            this.txtAddID.BackColor = System.Drawing.Color.Transparent;
+            this.txtAddID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddID.ForeColor = System.Drawing.Color.White;
+            this.txtAddID.Location = new System.Drawing.Point(222, 37);
+            this.txtAddID.Name = "txtAddID";
+            this.txtAddID.Size = new System.Drawing.Size(51, 17);
+            this.txtAddID.TabIndex = 15;
+            this.txtAddID.Text = "rndmID";
             // 
-            // btnSave
+            // addAlertBox
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnSave.Location = new System.Drawing.Point(601, 168);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Rounded = false;
-            this.btnSave.Size = new System.Drawing.Size(106, 32);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.addAlertBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addAlertBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.addAlertBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addAlertBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.addAlertBox.kind = FlatUI.FlatAlertBox._Kind.Success;
+            this.addAlertBox.Location = new System.Drawing.Point(83, 255);
+            this.addAlertBox.Name = "addAlertBox";
+            this.addAlertBox.Size = new System.Drawing.Size(624, 42);
+            this.addAlertBox.TabIndex = 14;
+            this.addAlertBox.Text = "The data has been successfully added.";
+            this.addAlertBox.Visible = false;
             // 
-            // txtHrgJual
+            // btnAddCancel
             // 
-            this.txtHrgJual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnAddCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnAddCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCancel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAddCancel.Location = new System.Drawing.Point(601, 206);
+            this.btnAddCancel.Name = "btnAddCancel";
+            this.btnAddCancel.Rounded = false;
+            this.btnAddCancel.Size = new System.Drawing.Size(106, 32);
+            this.btnAddCancel.TabIndex = 7;
+            this.btnAddCancel.Text = "Cancel";
+            this.btnAddCancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnAddCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAddSave
+            // 
+            this.btnAddSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnAddSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSave.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAddSave.Location = new System.Drawing.Point(601, 168);
+            this.btnAddSave.Name = "btnAddSave";
+            this.btnAddSave.Rounded = false;
+            this.btnAddSave.Size = new System.Drawing.Size(106, 32);
+            this.btnAddSave.TabIndex = 6;
+            this.btnAddSave.Text = "Save";
+            this.btnAddSave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnAddSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtAddHrgJual
+            // 
+            this.txtAddHrgJual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHrgJual.BackColor = System.Drawing.Color.Transparent;
-            this.txtHrgJual.FocusOnHover = false;
-            this.txtHrgJual.Location = new System.Drawing.Point(225, 209);
-            this.txtHrgJual.MaxLength = 15;
-            this.txtHrgJual.Multiline = false;
-            this.txtHrgJual.Name = "txtHrgJual";
-            this.txtHrgJual.ReadOnly = false;
-            this.txtHrgJual.Size = new System.Drawing.Size(350, 29);
-            this.txtHrgJual.TabIndex = 5;
-            this.txtHrgJual.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtHrgJual.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtHrgJual.UseSystemPasswordChar = false;
+            this.txtAddHrgJual.BackColor = System.Drawing.Color.Transparent;
+            this.txtAddHrgJual.FocusOnHover = false;
+            this.txtAddHrgJual.Location = new System.Drawing.Point(225, 209);
+            this.txtAddHrgJual.MaxLength = 15;
+            this.txtAddHrgJual.Multiline = false;
+            this.txtAddHrgJual.Name = "txtAddHrgJual";
+            this.txtAddHrgJual.ReadOnly = false;
+            this.txtAddHrgJual.Size = new System.Drawing.Size(350, 29);
+            this.txtAddHrgJual.TabIndex = 5;
+            this.txtAddHrgJual.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAddHrgJual.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtAddHrgJual.UseSystemPasswordChar = false;
             // 
-            // txtHrgHPP
+            // txtAddHrgHPP
             // 
-            this.txtHrgHPP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtAddHrgHPP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHrgHPP.BackColor = System.Drawing.Color.Transparent;
-            this.txtHrgHPP.FocusOnHover = false;
-            this.txtHrgHPP.Location = new System.Drawing.Point(225, 174);
-            this.txtHrgHPP.MaxLength = 15;
-            this.txtHrgHPP.Multiline = false;
-            this.txtHrgHPP.Name = "txtHrgHPP";
-            this.txtHrgHPP.ReadOnly = false;
-            this.txtHrgHPP.Size = new System.Drawing.Size(350, 29);
-            this.txtHrgHPP.TabIndex = 4;
-            this.txtHrgHPP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtHrgHPP.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtHrgHPP.UseSystemPasswordChar = false;
+            this.txtAddHrgHPP.BackColor = System.Drawing.Color.Transparent;
+            this.txtAddHrgHPP.FocusOnHover = false;
+            this.txtAddHrgHPP.Location = new System.Drawing.Point(225, 174);
+            this.txtAddHrgHPP.MaxLength = 15;
+            this.txtAddHrgHPP.Multiline = false;
+            this.txtAddHrgHPP.Name = "txtAddHrgHPP";
+            this.txtAddHrgHPP.ReadOnly = false;
+            this.txtAddHrgHPP.Size = new System.Drawing.Size(350, 29);
+            this.txtAddHrgHPP.TabIndex = 4;
+            this.txtAddHrgHPP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAddHrgHPP.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtAddHrgHPP.UseSystemPasswordChar = false;
             // 
-            // txtJlhAwal
+            // txtAddJlhAwal
             // 
-            this.txtJlhAwal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtAddJlhAwal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtJlhAwal.BackColor = System.Drawing.Color.Transparent;
-            this.txtJlhAwal.FocusOnHover = false;
-            this.txtJlhAwal.Location = new System.Drawing.Point(225, 139);
-            this.txtJlhAwal.MaxLength = 4;
-            this.txtJlhAwal.Multiline = false;
-            this.txtJlhAwal.Name = "txtJlhAwal";
-            this.txtJlhAwal.ReadOnly = false;
-            this.txtJlhAwal.Size = new System.Drawing.Size(350, 29);
-            this.txtJlhAwal.TabIndex = 3;
-            this.txtJlhAwal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtJlhAwal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtJlhAwal.UseSystemPasswordChar = false;
+            this.txtAddJlhAwal.BackColor = System.Drawing.Color.Transparent;
+            this.txtAddJlhAwal.FocusOnHover = false;
+            this.txtAddJlhAwal.Location = new System.Drawing.Point(225, 139);
+            this.txtAddJlhAwal.MaxLength = 4;
+            this.txtAddJlhAwal.Multiline = false;
+            this.txtAddJlhAwal.Name = "txtAddJlhAwal";
+            this.txtAddJlhAwal.ReadOnly = false;
+            this.txtAddJlhAwal.Size = new System.Drawing.Size(350, 29);
+            this.txtAddJlhAwal.TabIndex = 3;
+            this.txtAddJlhAwal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAddJlhAwal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtAddJlhAwal.UseSystemPasswordChar = false;
             // 
-            // txtNama
+            // txtAddNama
             // 
-            this.txtNama.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtAddNama.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNama.BackColor = System.Drawing.Color.Transparent;
-            this.txtNama.FocusOnHover = false;
-            this.txtNama.Location = new System.Drawing.Point(225, 104);
-            this.txtNama.MaxLength = 50;
-            this.txtNama.Multiline = false;
-            this.txtNama.Name = "txtNama";
-            this.txtNama.ReadOnly = false;
-            this.txtNama.Size = new System.Drawing.Size(350, 29);
-            this.txtNama.TabIndex = 2;
-            this.txtNama.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNama.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtNama.UseSystemPasswordChar = false;
+            this.txtAddNama.BackColor = System.Drawing.Color.Transparent;
+            this.txtAddNama.FocusOnHover = false;
+            this.txtAddNama.Location = new System.Drawing.Point(225, 104);
+            this.txtAddNama.MaxLength = 50;
+            this.txtAddNama.Multiline = false;
+            this.txtAddNama.Name = "txtAddNama";
+            this.txtAddNama.ReadOnly = false;
+            this.txtAddNama.Size = new System.Drawing.Size(350, 29);
+            this.txtAddNama.TabIndex = 2;
+            this.txtAddNama.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAddNama.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtAddNama.UseSystemPasswordChar = false;
             // 
-            // txtKode
+            // txtAddKode
             // 
-            this.txtKode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtAddKode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKode.BackColor = System.Drawing.Color.Transparent;
-            this.txtKode.FocusOnHover = false;
-            this.txtKode.Location = new System.Drawing.Point(225, 69);
-            this.txtKode.MaxLength = 10;
-            this.txtKode.Multiline = false;
-            this.txtKode.Name = "txtKode";
-            this.txtKode.ReadOnly = false;
-            this.txtKode.Size = new System.Drawing.Size(134, 29);
-            this.txtKode.TabIndex = 1;
-            this.txtKode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtKode.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtKode.UseSystemPasswordChar = false;
-            // 
-            // txtID
-            // 
-            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtID.BackColor = System.Drawing.Color.Transparent;
-            this.txtID.FocusOnHover = false;
-            this.txtID.Location = new System.Drawing.Point(225, 34);
-            this.txtID.MaxLength = 10;
-            this.txtID.Multiline = false;
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(134, 29);
-            this.txtID.TabIndex = 0;
-            this.txtID.TabStop = false;
-            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtID.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtID.UseSystemPasswordChar = false;
+            this.txtAddKode.BackColor = System.Drawing.Color.Transparent;
+            this.txtAddKode.FocusOnHover = false;
+            this.txtAddKode.Location = new System.Drawing.Point(225, 69);
+            this.txtAddKode.MaxLength = 10;
+            this.txtAddKode.Multiline = false;
+            this.txtAddKode.Name = "txtAddKode";
+            this.txtAddKode.ReadOnly = false;
+            this.txtAddKode.Size = new System.Drawing.Size(134, 29);
+            this.txtAddKode.TabIndex = 1;
+            this.txtAddKode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAddKode.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtAddKode.UseSystemPasswordChar = false;
             // 
             // flatLabel6
             // 
@@ -340,26 +369,240 @@
             // updateProductsPage
             // 
             this.updateProductsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.updateProductsPage.Controls.Add(this.flatButton4);
+            this.updateProductsPage.Controls.Add(this.flatButton3);
+            this.updateProductsPage.Controls.Add(this.flatButton2);
+            this.updateProductsPage.Controls.Add(this.flatButton1);
+            this.updateProductsPage.Controls.Add(this.btnDelete);
+            this.updateProductsPage.Controls.Add(this.txtUpdateID);
+            this.updateProductsPage.Controls.Add(this.btnCancelEdit);
+            this.updateProductsPage.Controls.Add(this.btnUpdate);
+            this.updateProductsPage.Controls.Add(this.txtUpdateHargaJual);
+            this.updateProductsPage.Controls.Add(this.txtUpdateHargaHPP);
+            this.updateProductsPage.Controls.Add(this.txtUpdateJlhAwal);
+            this.updateProductsPage.Controls.Add(this.txtUpdateNama);
+            this.updateProductsPage.Controls.Add(this.txtUpdateKode);
+            this.updateProductsPage.Controls.Add(this.flatLabel7);
+            this.updateProductsPage.Controls.Add(this.flatLabel8);
+            this.updateProductsPage.Controls.Add(this.flatLabel9);
+            this.updateProductsPage.Controls.Add(this.flatLabel10);
+            this.updateProductsPage.Controls.Add(this.flatLabel11);
+            this.updateProductsPage.Controls.Add(this.flatLabel12);
             this.updateProductsPage.Location = new System.Drawing.Point(4, 44);
             this.updateProductsPage.Name = "updateProductsPage";
             this.updateProductsPage.Padding = new System.Windows.Forms.Padding(3);
             this.updateProductsPage.Size = new System.Drawing.Size(805, 318);
             this.updateProductsPage.TabIndex = 7;
-            this.updateProductsPage.Text = "Update";
+            this.updateProductsPage.Text = "Edit";
             // 
-            // deleteProductsPage
+            // txtUpdateID
             // 
-            this.deleteProductsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.deleteProductsPage.Location = new System.Drawing.Point(4, 44);
-            this.deleteProductsPage.Name = "deleteProductsPage";
-            this.deleteProductsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.deleteProductsPage.Size = new System.Drawing.Size(805, 318);
-            this.deleteProductsPage.TabIndex = 8;
-            this.deleteProductsPage.Text = "Delete";
+            this.txtUpdateID.AutoSize = true;
+            this.txtUpdateID.BackColor = System.Drawing.Color.Transparent;
+            this.txtUpdateID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateID.ForeColor = System.Drawing.Color.White;
+            this.txtUpdateID.Location = new System.Drawing.Point(219, 41);
+            this.txtUpdateID.Name = "txtUpdateID";
+            this.txtUpdateID.Size = new System.Drawing.Size(51, 17);
+            this.txtUpdateID.TabIndex = 28;
+            this.txtUpdateID.Text = "rndmID";
+            // 
+            // btnCancelEdit
+            // 
+            this.btnCancelEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnCancelEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelEdit.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnCancelEdit.Location = new System.Drawing.Point(621, 175);
+            this.btnCancelEdit.Name = "btnCancelEdit";
+            this.btnCancelEdit.Rounded = false;
+            this.btnCancelEdit.Size = new System.Drawing.Size(106, 32);
+            this.btnCancelEdit.TabIndex = 21;
+            this.btnCancelEdit.Text = "Cancel";
+            this.btnCancelEdit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnUpdate.Location = new System.Drawing.Point(621, 137);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Rounded = false;
+            this.btnUpdate.Size = new System.Drawing.Size(106, 32);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // txtUpdateHargaJual
+            // 
+            this.txtUpdateHargaJual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUpdateHargaJual.BackColor = System.Drawing.Color.Transparent;
+            this.txtUpdateHargaJual.FocusOnHover = false;
+            this.txtUpdateHargaJual.Location = new System.Drawing.Point(222, 213);
+            this.txtUpdateHargaJual.MaxLength = 15;
+            this.txtUpdateHargaJual.Multiline = false;
+            this.txtUpdateHargaJual.Name = "txtUpdateHargaJual";
+            this.txtUpdateHargaJual.ReadOnly = false;
+            this.txtUpdateHargaJual.Size = new System.Drawing.Size(350, 29);
+            this.txtUpdateHargaJual.TabIndex = 19;
+            this.txtUpdateHargaJual.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUpdateHargaJual.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtUpdateHargaJual.UseSystemPasswordChar = false;
+            // 
+            // txtUpdateHargaHPP
+            // 
+            this.txtUpdateHargaHPP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUpdateHargaHPP.BackColor = System.Drawing.Color.Transparent;
+            this.txtUpdateHargaHPP.FocusOnHover = false;
+            this.txtUpdateHargaHPP.Location = new System.Drawing.Point(222, 178);
+            this.txtUpdateHargaHPP.MaxLength = 15;
+            this.txtUpdateHargaHPP.Multiline = false;
+            this.txtUpdateHargaHPP.Name = "txtUpdateHargaHPP";
+            this.txtUpdateHargaHPP.ReadOnly = false;
+            this.txtUpdateHargaHPP.Size = new System.Drawing.Size(350, 29);
+            this.txtUpdateHargaHPP.TabIndex = 18;
+            this.txtUpdateHargaHPP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUpdateHargaHPP.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtUpdateHargaHPP.UseSystemPasswordChar = false;
+            // 
+            // txtUpdateJlhAwal
+            // 
+            this.txtUpdateJlhAwal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUpdateJlhAwal.BackColor = System.Drawing.Color.Transparent;
+            this.txtUpdateJlhAwal.FocusOnHover = false;
+            this.txtUpdateJlhAwal.Location = new System.Drawing.Point(222, 143);
+            this.txtUpdateJlhAwal.MaxLength = 4;
+            this.txtUpdateJlhAwal.Multiline = false;
+            this.txtUpdateJlhAwal.Name = "txtUpdateJlhAwal";
+            this.txtUpdateJlhAwal.ReadOnly = false;
+            this.txtUpdateJlhAwal.Size = new System.Drawing.Size(350, 29);
+            this.txtUpdateJlhAwal.TabIndex = 17;
+            this.txtUpdateJlhAwal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUpdateJlhAwal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtUpdateJlhAwal.UseSystemPasswordChar = false;
+            // 
+            // txtUpdateNama
+            // 
+            this.txtUpdateNama.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUpdateNama.BackColor = System.Drawing.Color.Transparent;
+            this.txtUpdateNama.FocusOnHover = false;
+            this.txtUpdateNama.Location = new System.Drawing.Point(222, 108);
+            this.txtUpdateNama.MaxLength = 50;
+            this.txtUpdateNama.Multiline = false;
+            this.txtUpdateNama.Name = "txtUpdateNama";
+            this.txtUpdateNama.ReadOnly = false;
+            this.txtUpdateNama.Size = new System.Drawing.Size(350, 29);
+            this.txtUpdateNama.TabIndex = 16;
+            this.txtUpdateNama.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUpdateNama.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtUpdateNama.UseSystemPasswordChar = false;
+            // 
+            // txtUpdateKode
+            // 
+            this.txtUpdateKode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUpdateKode.BackColor = System.Drawing.Color.Transparent;
+            this.txtUpdateKode.FocusOnHover = false;
+            this.txtUpdateKode.Location = new System.Drawing.Point(222, 73);
+            this.txtUpdateKode.MaxLength = 10;
+            this.txtUpdateKode.Multiline = false;
+            this.txtUpdateKode.Name = "txtUpdateKode";
+            this.txtUpdateKode.ReadOnly = false;
+            this.txtUpdateKode.Size = new System.Drawing.Size(134, 29);
+            this.txtUpdateKode.TabIndex = 15;
+            this.txtUpdateKode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUpdateKode.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtUpdateKode.UseSystemPasswordChar = false;
+            // 
+            // flatLabel7
+            // 
+            this.flatLabel7.AutoSize = true;
+            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel7.ForeColor = System.Drawing.Color.White;
+            this.flatLabel7.Location = new System.Drawing.Point(77, 216);
+            this.flatLabel7.Name = "flatLabel7";
+            this.flatLabel7.Size = new System.Drawing.Size(36, 17);
+            this.flatLabel7.TabIndex = 27;
+            this.flatLabel7.Text = "Price";
+            // 
+            // flatLabel8
+            // 
+            this.flatLabel8.AutoSize = true;
+            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel8.ForeColor = System.Drawing.Color.White;
+            this.flatLabel8.Location = new System.Drawing.Point(77, 181);
+            this.flatLabel8.Name = "flatLabel8";
+            this.flatLabel8.Size = new System.Drawing.Size(123, 17);
+            this.flatLabel8.TabIndex = 26;
+            this.flatLabel8.Text = "Cost of Goods Sold";
+            // 
+            // flatLabel9
+            // 
+            this.flatLabel9.AutoSize = true;
+            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel9.ForeColor = System.Drawing.Color.White;
+            this.flatLabel9.Location = new System.Drawing.Point(77, 146);
+            this.flatLabel9.Name = "flatLabel9";
+            this.flatLabel9.Size = new System.Drawing.Size(56, 17);
+            this.flatLabel9.TabIndex = 25;
+            this.flatLabel9.Text = "Quantity";
+            // 
+            // flatLabel10
+            // 
+            this.flatLabel10.AutoSize = true;
+            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel10.ForeColor = System.Drawing.Color.White;
+            this.flatLabel10.Location = new System.Drawing.Point(77, 111);
+            this.flatLabel10.Name = "flatLabel10";
+            this.flatLabel10.Size = new System.Drawing.Size(43, 17);
+            this.flatLabel10.TabIndex = 24;
+            this.flatLabel10.Text = "Name";
+            // 
+            // flatLabel11
+            // 
+            this.flatLabel11.AutoSize = true;
+            this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel11.ForeColor = System.Drawing.Color.White;
+            this.flatLabel11.Location = new System.Drawing.Point(77, 76);
+            this.flatLabel11.Name = "flatLabel11";
+            this.flatLabel11.Size = new System.Drawing.Size(104, 17);
+            this.flatLabel11.TabIndex = 23;
+            this.flatLabel11.Text = "Code of Product";
+            // 
+            // flatLabel12
+            // 
+            this.flatLabel12.AutoSize = true;
+            this.flatLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel12.ForeColor = System.Drawing.Color.White;
+            this.flatLabel12.Location = new System.Drawing.Point(77, 41);
+            this.flatLabel12.Name = "flatLabel12";
+            this.flatLabel12.Size = new System.Drawing.Size(20, 17);
+            this.flatLabel12.TabIndex = 22;
+            this.flatLabel12.Text = "ID";
             // 
             // viewProductsPage
             // 
             this.viewProductsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.viewProductsPage.Controls.Add(this.dataGridView1);
             this.viewProductsPage.Location = new System.Drawing.Point(4, 44);
             this.viewProductsPage.Name = "viewProductsPage";
             this.viewProductsPage.Padding = new System.Windows.Forms.Padding(3);
@@ -409,20 +652,87 @@
             this.flatClose1.Text = "flatClose1";
             this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // flatAlertBox1
+            // btnDelete
             // 
-            this.flatAlertBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatAlertBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.flatAlertBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatAlertBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatAlertBox1.kind = FlatUI.FlatAlertBox._Kind.Success;
-            this.flatAlertBox1.Location = new System.Drawing.Point(83, 255);
-            this.flatAlertBox1.Name = "flatAlertBox1";
-            this.flatAlertBox1.Size = new System.Drawing.Size(624, 42);
-            this.flatAlertBox1.TabIndex = 14;
-            this.flatAlertBox1.Text = "The data has been successfully added.";
-            this.flatAlertBox1.Visible = false;
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(621, 213);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Rounded = false;
+            this.btnDelete.Size = new System.Drawing.Size(106, 32);
+            this.btnDelete.TabIndex = 29;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(793, 306);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // flatButton1
+            // 
+            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton1.Location = new System.Drawing.Point(224, 262);
+            this.flatButton1.Name = "flatButton1";
+            this.flatButton1.Rounded = false;
+            this.flatButton1.Size = new System.Drawing.Size(82, 32);
+            this.flatButton1.TabIndex = 30;
+            this.flatButton1.Text = "First";
+            this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // flatButton2
+            // 
+            this.flatButton2.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton2.Location = new System.Drawing.Point(312, 262);
+            this.flatButton2.Name = "flatButton2";
+            this.flatButton2.Rounded = false;
+            this.flatButton2.Size = new System.Drawing.Size(82, 32);
+            this.flatButton2.TabIndex = 31;
+            this.flatButton2.Text = "Prev";
+            this.flatButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // flatButton3
+            // 
+            this.flatButton3.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton3.Location = new System.Drawing.Point(400, 262);
+            this.flatButton3.Name = "flatButton3";
+            this.flatButton3.Rounded = false;
+            this.flatButton3.Size = new System.Drawing.Size(82, 32);
+            this.flatButton3.TabIndex = 32;
+            this.flatButton3.Text = "Next";
+            this.flatButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // flatButton4
+            // 
+            this.flatButton4.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton4.Location = new System.Drawing.Point(488, 262);
+            this.flatButton4.Name = "flatButton4";
+            this.flatButton4.Rounded = false;
+            this.flatButton4.Size = new System.Drawing.Size(82, 32);
+            this.flatButton4.TabIndex = 33;
+            this.flatButton4.Text = "Last";
+            this.flatButton4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
             // FormBarang
             // 
@@ -440,6 +750,10 @@
             this.productsTabControl.ResumeLayout(false);
             this.addProductsPage.ResumeLayout(false);
             this.addProductsPage.PerformLayout();
+            this.updateProductsPage.ResumeLayout(false);
+            this.updateProductsPage.PerformLayout();
+            this.viewProductsPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,18 +772,37 @@
         private FlatUI.FlatLabel flatLabel3;
         private FlatUI.FlatLabel flatLabel2;
         private FlatUI.FlatLabel flatLabel1;
-        private FlatUI.FlatButton btnCancel;
-        private FlatUI.FlatButton btnSave;
-        private FlatUI.FlatTextBox txtHrgJual;
-        private FlatUI.FlatTextBox txtHrgHPP;
-        private FlatUI.FlatTextBox txtJlhAwal;
-        private FlatUI.FlatTextBox txtNama;
-        private FlatUI.FlatTextBox txtKode;
-        private FlatUI.FlatTextBox txtID;
+        private FlatUI.FlatButton btnAddCancel;
+        private FlatUI.FlatButton btnAddSave;
+        private FlatUI.FlatTextBox txtAddHrgJual;
+        private FlatUI.FlatTextBox txtAddHrgHPP;
+        private FlatUI.FlatTextBox txtAddJlhAwal;
+        private FlatUI.FlatTextBox txtAddNama;
+        private FlatUI.FlatTextBox txtAddKode;
         private System.Windows.Forms.TabPage updateProductsPage;
-        private System.Windows.Forms.TabPage deleteProductsPage;
         private System.Windows.Forms.TabPage viewProductsPage;
-        private FlatUI.FlatAlertBox flatAlertBox1;
+        private FlatUI.FlatAlertBox addAlertBox;
+        private FlatUI.FlatButton btnCancelEdit;
+        private FlatUI.FlatButton btnUpdate;
+        private FlatUI.FlatTextBox txtUpdateHargaJual;
+        private FlatUI.FlatTextBox txtUpdateHargaHPP;
+        private FlatUI.FlatTextBox txtUpdateJlhAwal;
+        private FlatUI.FlatTextBox txtUpdateNama;
+        private FlatUI.FlatTextBox txtUpdateKode;
+        private FlatUI.FlatLabel flatLabel7;
+        private FlatUI.FlatLabel flatLabel8;
+        private FlatUI.FlatLabel flatLabel9;
+        private FlatUI.FlatLabel flatLabel10;
+        private FlatUI.FlatLabel flatLabel11;
+        private FlatUI.FlatLabel flatLabel12;
+        private FlatUI.FlatLabel txtAddID;
+        private FlatUI.FlatLabel txtUpdateID;
+        private FlatUI.FlatButton btnDelete;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private FlatUI.FlatButton flatButton4;
+        private FlatUI.FlatButton flatButton3;
+        private FlatUI.FlatButton flatButton2;
+        private FlatUI.FlatButton flatButton1;
     }
 }
 

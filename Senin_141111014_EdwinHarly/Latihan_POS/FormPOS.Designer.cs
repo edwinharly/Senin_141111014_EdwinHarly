@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.formSkin1 = new FlatUI.FormSkin();
-            this.flatTabControl1 = new FlatUI.FlatTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.flatButton1 = new FlatUI.FlatButton();
+            this.btnFrmBrg = new FlatUI.FlatButton();
+            this.btnFrmCust = new FlatUI.FlatButton();
+            this.btnFrmSupp = new FlatUI.FlatButton();
+            this.flatMini1 = new FlatUI.FlatMini();
+            this.flatClose1 = new FlatUI.FlatClose();
             this.formSkin1.SuspendLayout();
-            this.flatTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // formSkin1
@@ -44,7 +42,11 @@
             this.formSkin1.BackColor = System.Drawing.Color.White;
             this.formSkin1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.formSkin1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
-            this.formSkin1.Controls.Add(this.flatTabControl1);
+            this.formSkin1.Controls.Add(this.flatClose1);
+            this.formSkin1.Controls.Add(this.flatMini1);
+            this.formSkin1.Controls.Add(this.btnFrmSupp);
+            this.formSkin1.Controls.Add(this.btnFrmCust);
+            this.formSkin1.Controls.Add(this.btnFrmBrg);
             this.formSkin1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formSkin1.FlatColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.formSkin1.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -52,79 +54,86 @@
             this.formSkin1.HeaderMaximize = false;
             this.formSkin1.Location = new System.Drawing.Point(0, 0);
             this.formSkin1.Name = "formSkin1";
-            this.formSkin1.Size = new System.Drawing.Size(813, 410);
+            this.formSkin1.Size = new System.Drawing.Size(480, 346);
             this.formSkin1.TabIndex = 0;
-            this.formSkin1.Text = "Point of Sale";
+            this.formSkin1.Text = "Menu - Point of Sale";
             // 
-            // flatTabControl1
+            // btnFrmBrg
             // 
-            this.flatTabControl1.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatTabControl1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.flatTabControl1.Controls.Add(this.tabPage1);
-            this.flatTabControl1.Controls.Add(this.tabPage2);
-            this.flatTabControl1.Controls.Add(this.tabPage3);
-            this.flatTabControl1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatTabControl1.ItemSize = new System.Drawing.Size(120, 40);
-            this.flatTabControl1.Location = new System.Drawing.Point(0, 50);
-            this.flatTabControl1.Name = "flatTabControl1";
-            this.flatTabControl1.SelectedIndex = 0;
-            this.flatTabControl1.Size = new System.Drawing.Size(813, 360);
-            this.flatTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.flatTabControl1.TabIndex = 0;
+            this.btnFrmBrg.BackColor = System.Drawing.Color.Transparent;
+            this.btnFrmBrg.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnFrmBrg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFrmBrg.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnFrmBrg.Location = new System.Drawing.Point(32, 82);
+            this.btnFrmBrg.Name = "btnFrmBrg";
+            this.btnFrmBrg.Rounded = false;
+            this.btnFrmBrg.Size = new System.Drawing.Size(110, 102);
+            this.btnFrmBrg.TabIndex = 0;
+            this.btnFrmBrg.Text = "Products";
+            this.btnFrmBrg.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnFrmBrg.Click += new System.EventHandler(this.btnFrmBrg_Click);
             // 
-            // tabPage1
+            // btnFrmCust
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.tabPage1.Controls.Add(this.flatButton1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 44);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(805, 312);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Products";
+            this.btnFrmCust.BackColor = System.Drawing.Color.Transparent;
+            this.btnFrmCust.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnFrmCust.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFrmCust.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnFrmCust.Location = new System.Drawing.Point(184, 82);
+            this.btnFrmCust.Name = "btnFrmCust";
+            this.btnFrmCust.Rounded = false;
+            this.btnFrmCust.Size = new System.Drawing.Size(110, 102);
+            this.btnFrmCust.TabIndex = 1;
+            this.btnFrmCust.Text = "Customers";
+            this.btnFrmCust.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnFrmCust.Click += new System.EventHandler(this.btnFrmCust_Click);
             // 
-            // tabPage2
+            // btnFrmSupp
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 44);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(805, 312);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Customers";
+            this.btnFrmSupp.BackColor = System.Drawing.Color.Transparent;
+            this.btnFrmSupp.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnFrmSupp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFrmSupp.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnFrmSupp.Location = new System.Drawing.Point(339, 82);
+            this.btnFrmSupp.Name = "btnFrmSupp";
+            this.btnFrmSupp.Rounded = false;
+            this.btnFrmSupp.Size = new System.Drawing.Size(110, 102);
+            this.btnFrmSupp.TabIndex = 2;
+            this.btnFrmSupp.Text = "Suppliers";
+            this.btnFrmSupp.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnFrmSupp.Click += new System.EventHandler(this.btnFrmSupp_Click);
             // 
-            // tabPage3
+            // flatMini1
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 44);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(805, 312);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Suppliers";
+            this.flatMini1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flatMini1.BackColor = System.Drawing.Color.White;
+            this.flatMini1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.flatMini1.Font = new System.Drawing.Font("Marlett", 12F);
+            this.flatMini1.Location = new System.Drawing.Point(435, 3);
+            this.flatMini1.Name = "flatMini1";
+            this.flatMini1.Size = new System.Drawing.Size(18, 18);
+            this.flatMini1.TabIndex = 3;
+            this.flatMini1.Text = "flatMini1";
+            this.flatMini1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // flatButton1
+            // flatClose1
             // 
-            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton1.Location = new System.Drawing.Point(26, 28);
-            this.flatButton1.Name = "flatButton1";
-            this.flatButton1.Rounded = false;
-            this.flatButton1.Size = new System.Drawing.Size(106, 94);
-            this.flatButton1.TabIndex = 0;
-            this.flatButton1.Text = "flatButton1";
-            this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.flatClose1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flatClose1.BackColor = System.Drawing.Color.White;
+            this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
+            this.flatClose1.Location = new System.Drawing.Point(459, 3);
+            this.flatClose1.Name = "flatClose1";
+            this.flatClose1.Size = new System.Drawing.Size(18, 18);
+            this.flatClose1.TabIndex = 4;
+            this.flatClose1.Text = "flatClose1";
+            this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
             // FormPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 410);
+            this.ClientSize = new System.Drawing.Size(480, 346);
             this.Controls.Add(this.formSkin1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPOS";
@@ -132,8 +141,6 @@
             this.Text = "FormPOS";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.formSkin1.ResumeLayout(false);
-            this.flatTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -141,10 +148,10 @@
         #endregion
 
         private FlatUI.FormSkin formSkin1;
-        private FlatUI.FlatTabControl flatTabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private FlatUI.FlatButton flatButton1;
+        private FlatUI.FlatButton btnFrmSupp;
+        private FlatUI.FlatButton btnFrmCust;
+        private FlatUI.FlatButton btnFrmBrg;
+        private FlatUI.FlatClose flatClose1;
+        private FlatUI.FlatMini flatMini1;
     }
 }

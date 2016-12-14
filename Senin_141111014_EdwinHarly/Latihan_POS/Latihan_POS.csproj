@@ -75,19 +75,37 @@
     <Compile Include="FormBarang.Designer.cs">
       <DependentUpon>FormBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer.Designer.cs">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPOS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPOS.Designer.cs">
       <DependentUpon>FormPOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplier.Designer.cs">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBarang.resx">
       <DependentUpon>FormBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomer.resx">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPOS.resx">
       <DependentUpon>FormPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSupplier.resx">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
