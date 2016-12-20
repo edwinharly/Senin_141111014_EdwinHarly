@@ -60,10 +60,48 @@ namespace Latihan_POS
                 return res;
             }
         }
-        public void resetField()
+        public void resetAddField()
         {
             txtAddKode.Text = txtAddNama.Text = txtAddJlhAwal.Text = txtAddHrgHPP.Text = txtAddHrgJual.Text = "";
             txtAddID.Text = generateID();
+        }
+
+        public void refillProductsList()
+        {
+            productsList = new List<Products>();
+            string connectionString = "server=localhost;uid=root;" + "pwd=root;database=pos_schema;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string sql = "SELECT ID, Kode, Nama, JumlahAwal, HargaHPP, HargaJual from barang";
+                using (MySqlCommand comm = new MySqlCommand(sql, conn))
+                {
+                    try
+                    {
+                        conn.Open();
+                        MySqlDataReader reader = comm.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            //queryRes = reader.GetString(0);
+                            Products tmp = new Products();
+                            tmp.id = reader.GetString(0);
+                            tmp.code = reader.GetString(1);
+                            tmp.name = reader.GetString(2);
+                            tmp.qty = reader.GetInt16(3);
+                            tmp.cost = reader.GetInt64(4);
+                            tmp.price = reader.GetInt64(5);
+
+                            productsList.Add(tmp);
+                        }
+                        reader.Close();
+
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message);
+                    }
+                }
+            }
         }
         public struct Products
         {
@@ -74,15 +112,44 @@ namespace Latihan_POS
             public long cost;
             public long price;
         }
-        public static List<Products> productsList = new List<Products>();
+        public static List<Products> productsList;
+        public void refreshEditPage(int n)
+        {
+            //productsList.Sort();
+            
+            txtUpdateID.Text = productsList[n].id;
+            txtUpdateKode.Text = productsList[n].code;
+            txtUpdateNama.Text = productsList[n].name;
+            txtUpdateJlhAwal.Text = productsList[n].qty.ToString();
+            txtUpdateHargaHPP.Text = productsList[n].cost.ToString();
+            txtUpdateHargaJual.Text = productsList[n].price.ToString();
+            
+        }
+        public int currentViewOnEdit = 0;
 
         public FormBarang()
         {
             InitializeComponent();
             
         }
+        private void FormBarang_Load(object sender, EventArgs e)
+        {
+            
+            txtAddID.Text = generateID();
+            refillProductsList();
+            refreshEditPage(currentViewOnEdit);
+            //txtAddKode.Focus();
+            //flatLabel1.TabStop = false;
+            //flatLabel2.TabStop = false;
+            //flatLabel3.TabStop = false;
+            //flatLabel4.TabStop = false;
+            //flatLabel5.TabStop = false;
+            //flatLabel6.TabStop = false;
+            //productsTabControl.TabPages.Remove(deleteProductsPage);
+            //productsTabControl.TabPages.Insert(2, deleteProductsPage);
+        }
 
-
+        #region Add Barang
         private void btnSave_Click(object sender, EventArgs e)
         {
             
@@ -112,8 +179,18 @@ namespace Latihan_POS
                                 
                             }
                             addAlertBox.Visible = true;
-                            resetField();
+                            resetAddField();
                             txtAddKode.Focus();
+
+                            Products tmp = new Products();
+                            tmp.id = txtAddID.Text;
+                            tmp.code = txtAddKode.Text;
+                            tmp.name = txtAddNama.Text;
+                            tmp.qty = Convert.ToInt16(txtAddJlhAwal.Text);
+                            tmp.cost = Convert.ToInt64(txtAddHrgHPP.Text);
+                            tmp.price = Convert.ToInt64(txtAddHrgJual.Text);
+                            productsList.Add(tmp);
+                            
                         }
                         else
                         {
@@ -143,65 +220,158 @@ namespace Latihan_POS
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            resetField();
+            resetAddField();
             txtAddID.Focus();
             
         }
-
-        private void FormBarang_Load(object sender, EventArgs e)
+        #endregion
+// ==================================================================================
+        #region Edit Barang
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            txtAddID.Text = generateID();
-
-            
-
-            string connectionString = "server=localhost;uid=root;" + "pwd=root;database=pos_schema;";
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            try
             {
-                string sql = "SELECT ID, Kode, Nama, JumlahAwal, HargaHPP, HargaJual from barang";
-                using (MySqlCommand comm = new MySqlCommand(sql, conn))
+                string connectionString = "server=localhost;uid=root;" + "pwd=root;database=pos_schema;";
+                string sql = "update barang set kode = @kode, nama = @nama, jumlahawal = @jlhawal, hargahpp = @hargahpp, hargajual = @hargajual, updates_on = now() where id = @id;";
+
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    try
+                    using (MySqlCommand comm = new MySqlCommand(sql, conn))
                     {
                         conn.Open();
-                        MySqlDataReader reader = comm.ExecuteReader();
-                        
-                        while (reader.Read())
+                        //MessageBox.Show(conn.ConnectionString);
+                        comm.Parameters.AddWithValue("@id", txtUpdateID.Text);
+                        comm.Parameters.AddWithValue("@kode", txtUpdateKode.Text);
+                        comm.Parameters.AddWithValue("@nama", txtUpdateNama.Text);
+                        comm.Parameters.AddWithValue("@jlhawal", txtUpdateJlhAwal.Text);
+                        comm.Parameters.AddWithValue("@hargahpp", txtUpdateHargaHPP.Text);
+                        comm.Parameters.AddWithValue("@hargajual", txtUpdateHargaJual.Text);
+
+                        if (comm.ExecuteNonQuery() == 1)
                         {
-                            //queryRes = reader.GetString(0);
-                            Products tmp = new Products();
-                            tmp.id = reader.GetString(0);
-                            tmp.code = reader.GetString(1);
-                            tmp.name = reader.GetString(2);
-                            tmp.qty = reader.GetInt16(3);
-                            tmp.cost = reader.GetInt64(4);
-                            tmp.price = reader.GetInt64(5);
+                            using (new CenterWinDialog(this))
+                            {
 
-                            productsList.Add(tmp);
+                            }
+                            editAlertBox.Visible = true;
+                            editAlertBox.Text = "The data has been successfully updated";
+                            refreshEditPage(currentViewOnEdit);
+                            txtUpdateKode.Focus();
+
+                            refillProductsList();
                         }
-                        reader.Close();
-                        
-                    }
-                    catch (Exception err)
-                    {
-                        MessageBox.Show(err.Message);
-                    }
+                        else
+                        {
+                            using (new CenterWinDialog(this))
+                            {
 
+                            }
+                            addAlertBox.kind = (FlatUI.FlatAlertBox._Kind)1;
+                            addAlertBox.Text = "Oops! Looks like something went wrong.";
+                            addAlertBox.Visible = true;
+                        }
+                        conn.Close();
+                    }
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                if (ex.Message.IndexOf("Duplicate") >= 1)
+                {
 
                 }
             }
-
-                
-
-
-            //txtAddKode.Focus();
-            //flatLabel1.TabStop = false;
-            //flatLabel2.TabStop = false;
-            //flatLabel3.TabStop = false;
-            //flatLabel4.TabStop = false;
-            //flatLabel5.TabStop = false;
-            //flatLabel6.TabStop = false;
-            //productsTabControl.TabPages.Remove(deleteProductsPage);
-            //productsTabControl.TabPages.Insert(2, deleteProductsPage);
         }
+
+        private void firstBtn_Click(object sender, EventArgs e)
+        {
+            currentViewOnEdit = 0;
+            refreshEditPage(currentViewOnEdit);
+        }
+        private void prevBtn_Click(object sender, EventArgs e)
+        {
+            if (currentViewOnEdit <= 0) return;
+            currentViewOnEdit -= 1;
+            refreshEditPage(currentViewOnEdit);
+        }
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            if (currentViewOnEdit >= productsList.Count - 1) return;
+            currentViewOnEdit += 1;
+            refreshEditPage(currentViewOnEdit);
+        }
+        private void lastBtn_Click(object sender, EventArgs e)
+        {
+            currentViewOnEdit = productsList.Count - 1;
+            refreshEditPage(currentViewOnEdit);
+        }
+
+        private void btnCancelEdit_Click(object sender, EventArgs e)
+        {
+            refreshEditPage(currentViewOnEdit);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to delete this record ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==  DialogResult.Yes)
+            {
+                try
+                {
+                    string connectionString = "server=localhost;uid=root;" + "pwd=root;database=pos_schema;";
+                    string sql = "delete from barang where id = @id;";
+
+                    using (MySqlConnection conn = new MySqlConnection(connectionString))
+                    {
+                        using (MySqlCommand comm = new MySqlCommand(sql, conn))
+                        {
+                            conn.Open();
+                            //MessageBox.Show(conn.ConnectionString);
+
+                            comm.Parameters.AddWithValue("@id", txtUpdateID.Text);
+
+                            if (comm.ExecuteNonQuery() == 1)
+                            {
+                                using (new CenterWinDialog(this))
+                                {
+
+                                }
+                                editAlertBox.Visible = true;
+                                editAlertBox.Text = "The data has been successfully deleted";
+                                txtUpdateKode.Focus();
+                                refillProductsList();
+                                refreshEditPage(currentViewOnEdit);
+                            }
+                            else
+                            {
+                                using (new CenterWinDialog(this))
+                                {
+
+                                }
+                                addAlertBox.kind = (FlatUI.FlatAlertBox._Kind)1;
+                                addAlertBox.Text = "Oops! Looks like something went wrong.";
+                                addAlertBox.Visible = true;
+                            }
+                            conn.Close();
+                        }
+                    }
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    if (ex.Message.IndexOf("Duplicate") >= 1)
+                    {
+
+                    }
+                }
+            }
+            else
+            {
+                
+            }
+        }
+        #endregion
     }
 }

@@ -47,6 +47,11 @@
             this.flatLabel2 = new FlatUI.FlatLabel();
             this.flatLabel1 = new FlatUI.FlatLabel();
             this.updateProductsPage = new System.Windows.Forms.TabPage();
+            this.lastBtn = new FlatUI.FlatButton();
+            this.nextBtn = new FlatUI.FlatButton();
+            this.prevBtn = new FlatUI.FlatButton();
+            this.firstBtn = new FlatUI.FlatButton();
+            this.btnDelete = new FlatUI.FlatButton();
             this.txtUpdateID = new FlatUI.FlatLabel();
             this.btnCancelEdit = new FlatUI.FlatButton();
             this.btnUpdate = new FlatUI.FlatButton();
@@ -62,15 +67,11 @@
             this.flatLabel11 = new FlatUI.FlatLabel();
             this.flatLabel12 = new FlatUI.FlatLabel();
             this.viewProductsPage = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatMax1 = new FlatUI.FlatMax();
             this.flatClose1 = new FlatUI.FlatClose();
-            this.btnDelete = new FlatUI.FlatButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.flatButton1 = new FlatUI.FlatButton();
-            this.flatButton2 = new FlatUI.FlatButton();
-            this.flatButton3 = new FlatUI.FlatButton();
-            this.flatButton4 = new FlatUI.FlatButton();
+            this.editAlertBox = new FlatUI.FlatAlertBox();
             this.formSkin1.SuspendLayout();
             this.productsTabControl.SuspendLayout();
             this.addProductsPage.SuspendLayout();
@@ -369,10 +370,11 @@
             // updateProductsPage
             // 
             this.updateProductsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.updateProductsPage.Controls.Add(this.flatButton4);
-            this.updateProductsPage.Controls.Add(this.flatButton3);
-            this.updateProductsPage.Controls.Add(this.flatButton2);
-            this.updateProductsPage.Controls.Add(this.flatButton1);
+            this.updateProductsPage.Controls.Add(this.editAlertBox);
+            this.updateProductsPage.Controls.Add(this.lastBtn);
+            this.updateProductsPage.Controls.Add(this.nextBtn);
+            this.updateProductsPage.Controls.Add(this.prevBtn);
+            this.updateProductsPage.Controls.Add(this.firstBtn);
             this.updateProductsPage.Controls.Add(this.btnDelete);
             this.updateProductsPage.Controls.Add(this.txtUpdateID);
             this.updateProductsPage.Controls.Add(this.btnCancelEdit);
@@ -394,6 +396,82 @@
             this.updateProductsPage.Size = new System.Drawing.Size(805, 318);
             this.updateProductsPage.TabIndex = 7;
             this.updateProductsPage.Text = "Edit";
+            // 
+            // lastBtn
+            // 
+            this.lastBtn.BackColor = System.Drawing.Color.Transparent;
+            this.lastBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.lastBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lastBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lastBtn.Location = new System.Drawing.Point(488, 262);
+            this.lastBtn.Name = "lastBtn";
+            this.lastBtn.Rounded = false;
+            this.lastBtn.Size = new System.Drawing.Size(82, 32);
+            this.lastBtn.TabIndex = 33;
+            this.lastBtn.Text = "Last";
+            this.lastBtn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.lastBtn.Click += new System.EventHandler(this.lastBtn_Click);
+            // 
+            // nextBtn
+            // 
+            this.nextBtn.BackColor = System.Drawing.Color.Transparent;
+            this.nextBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.nextBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nextBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.nextBtn.Location = new System.Drawing.Point(400, 262);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Rounded = false;
+            this.nextBtn.Size = new System.Drawing.Size(82, 32);
+            this.nextBtn.TabIndex = 32;
+            this.nextBtn.Text = "Next";
+            this.nextBtn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+            // 
+            // prevBtn
+            // 
+            this.prevBtn.BackColor = System.Drawing.Color.Transparent;
+            this.prevBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.prevBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.prevBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.prevBtn.Location = new System.Drawing.Point(312, 262);
+            this.prevBtn.Name = "prevBtn";
+            this.prevBtn.Rounded = false;
+            this.prevBtn.Size = new System.Drawing.Size(82, 32);
+            this.prevBtn.TabIndex = 31;
+            this.prevBtn.Text = "Prev";
+            this.prevBtn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
+            // 
+            // firstBtn
+            // 
+            this.firstBtn.BackColor = System.Drawing.Color.Transparent;
+            this.firstBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.firstBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.firstBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.firstBtn.Location = new System.Drawing.Point(224, 262);
+            this.firstBtn.Name = "firstBtn";
+            this.firstBtn.Rounded = false;
+            this.firstBtn.Size = new System.Drawing.Size(82, 32);
+            this.firstBtn.TabIndex = 30;
+            this.firstBtn.Text = "First";
+            this.firstBtn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.firstBtn.Click += new System.EventHandler(this.firstBtn_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(621, 213);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Rounded = false;
+            this.btnDelete.Size = new System.Drawing.Size(106, 32);
+            this.btnDelete.TabIndex = 29;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtUpdateID
             // 
@@ -421,6 +499,7 @@
             this.btnCancelEdit.TabIndex = 21;
             this.btnCancelEdit.Text = "Cancel";
             this.btnCancelEdit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
             // 
             // btnUpdate
             // 
@@ -436,6 +515,7 @@
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtUpdateHargaJual
             // 
@@ -610,6 +690,17 @@
             this.viewProductsPage.TabIndex = 9;
             this.viewProductsPage.Text = "View";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(793, 306);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // flatMini1
             // 
             this.flatMini1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -652,87 +743,18 @@
             this.flatClose1.Text = "flatClose1";
             this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // btnDelete
+            // editAlertBox
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnDelete.Location = new System.Drawing.Point(621, 213);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Rounded = false;
-            this.btnDelete.Size = new System.Drawing.Size(106, 32);
-            this.btnDelete.TabIndex = 29;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(793, 306);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // flatButton1
-            // 
-            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton1.Location = new System.Drawing.Point(224, 262);
-            this.flatButton1.Name = "flatButton1";
-            this.flatButton1.Rounded = false;
-            this.flatButton1.Size = new System.Drawing.Size(82, 32);
-            this.flatButton1.TabIndex = 30;
-            this.flatButton1.Text = "First";
-            this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // flatButton2
-            // 
-            this.flatButton2.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton2.Location = new System.Drawing.Point(312, 262);
-            this.flatButton2.Name = "flatButton2";
-            this.flatButton2.Rounded = false;
-            this.flatButton2.Size = new System.Drawing.Size(82, 32);
-            this.flatButton2.TabIndex = 31;
-            this.flatButton2.Text = "Prev";
-            this.flatButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // flatButton3
-            // 
-            this.flatButton3.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton3.Location = new System.Drawing.Point(400, 262);
-            this.flatButton3.Name = "flatButton3";
-            this.flatButton3.Rounded = false;
-            this.flatButton3.Size = new System.Drawing.Size(82, 32);
-            this.flatButton3.TabIndex = 32;
-            this.flatButton3.Text = "Next";
-            this.flatButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // flatButton4
-            // 
-            this.flatButton4.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton4.Location = new System.Drawing.Point(488, 262);
-            this.flatButton4.Name = "flatButton4";
-            this.flatButton4.Rounded = false;
-            this.flatButton4.Size = new System.Drawing.Size(82, 32);
-            this.flatButton4.TabIndex = 33;
-            this.flatButton4.Text = "Last";
-            this.flatButton4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.editAlertBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.editAlertBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editAlertBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.editAlertBox.kind = FlatUI.FlatAlertBox._Kind.Success;
+            this.editAlertBox.Location = new System.Drawing.Point(333, 16);
+            this.editAlertBox.Name = "editAlertBox";
+            this.editAlertBox.Size = new System.Drawing.Size(452, 42);
+            this.editAlertBox.TabIndex = 34;
+            this.editAlertBox.Text = "flatAlertBox1";
+            this.editAlertBox.Visible = false;
             // 
             // FormBarang
             // 
@@ -799,10 +821,11 @@
         private FlatUI.FlatLabel txtUpdateID;
         private FlatUI.FlatButton btnDelete;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private FlatUI.FlatButton flatButton4;
-        private FlatUI.FlatButton flatButton3;
-        private FlatUI.FlatButton flatButton2;
-        private FlatUI.FlatButton flatButton1;
+        private FlatUI.FlatButton lastBtn;
+        private FlatUI.FlatButton nextBtn;
+        private FlatUI.FlatButton prevBtn;
+        private FlatUI.FlatButton firstBtn;
+        private FlatUI.FlatAlertBox editAlertBox;
     }
 }
 
