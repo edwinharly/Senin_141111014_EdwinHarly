@@ -351,9 +351,9 @@
             this.flatLabel2.ForeColor = System.Drawing.Color.White;
             this.flatLabel2.Location = new System.Drawing.Point(80, 72);
             this.flatLabel2.Name = "flatLabel2";
-            this.flatLabel2.Size = new System.Drawing.Size(104, 17);
+            this.flatLabel2.Size = new System.Drawing.Size(88, 17);
             this.flatLabel2.TabIndex = 9;
-            this.flatLabel2.Text = "Code of Product";
+            this.flatLabel2.Text = "Product Code";
             // 
             // flatLabel1
             // 
@@ -674,11 +674,12 @@
             this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel11.ForeColor = System.Drawing.Color.White;
+            this.flatLabel11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.flatLabel11.Location = new System.Drawing.Point(77, 76);
             this.flatLabel11.Name = "flatLabel11";
-            this.flatLabel11.Size = new System.Drawing.Size(104, 17);
+            this.flatLabel11.Size = new System.Drawing.Size(88, 17);
             this.flatLabel11.TabIndex = 23;
-            this.flatLabel11.Text = "Code of Product";
+            this.flatLabel11.Text = "Product Code";
             // 
             // flatLabel12
             // 
