@@ -81,11 +81,23 @@
     <Compile Include="FormCustomer.Designer.cs">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormJual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJual.Designer.cs">
+      <DependentUpon>FormJual.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPOS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPOS.Designer.cs">
       <DependentUpon>FormPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPurchase.Designer.cs">
+      <DependentUpon>FormPurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSupplier.cs">
       <SubType>Form</SubType>
@@ -101,8 +113,14 @@
     <EmbeddedResource Include="FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormJual.resx">
+      <DependentUpon>FormJual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPOS.resx">
       <DependentUpon>FormPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPurchase.resx">
+      <DependentUpon>FormPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier.resx">
       <DependentUpon>FormSupplier.cs</DependentUpon>
