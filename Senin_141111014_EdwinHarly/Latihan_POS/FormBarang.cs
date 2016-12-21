@@ -66,6 +66,15 @@ namespace Latihan_POS
             txtAddID.Text = generateID();
         }
 
+        public class Products
+        {
+            public string id { get; set; }
+            public string code { set; get; }
+            public string name { set; get; }
+            public int qty { set; get; }
+            public long cost { set; get; }
+            public long price { set; get; }
+        }
         public void refillProductsList()
         {
             productsList = new List<Products>();
@@ -103,16 +112,18 @@ namespace Latihan_POS
                 }
             }
         }
-        public struct Products
-        {
-            public string id;
-            public string code;
-            public string name;
-            public int qty;
-            public long cost;
-            public long price;
-        }
-        public static List<Products> productsList;
+        //public struct Products
+        //{
+        //    public string id;
+        //    public string code;
+        //    public string name;
+        //    public int qty;
+        //    public long cost;
+        //    public long price;
+        //}
+
+        public static List<Products> productsList = new List<Products>();
+
         public void refreshEditPage(int n)
         {
             //productsList.Sort();
@@ -124,6 +135,13 @@ namespace Latihan_POS
             txtUpdateHargaHPP.Text = productsList[n].cost.ToString();
             txtUpdateHargaJual.Text = productsList[n].price.ToString();
             
+        }
+        public void refreshDGVBarang()
+        {
+            //var bindingList = new BindingList<Products>(productsList);
+            var srcDGVBarang = new BindingSource();
+            srcDGVBarang.DataSource = productsList;
+            DGVBarang.DataSource = srcDGVBarang;
         }
         public int currentViewOnEdit = 0;
 
@@ -138,6 +156,7 @@ namespace Latihan_POS
             txtAddID.Text = generateID();
             refillProductsList();
             refreshEditPage(currentViewOnEdit);
+            refreshDGVBarang();
             //txtAddKode.Focus();
             //flatLabel1.TabStop = false;
             //flatLabel2.TabStop = false;
@@ -190,7 +209,6 @@ namespace Latihan_POS
                             tmp.cost = Convert.ToInt64(txtAddHrgHPP.Text);
                             tmp.price = Convert.ToInt64(txtAddHrgJual.Text);
                             productsList.Add(tmp);
-                            
                         }
                         else
                         {
@@ -255,10 +273,9 @@ namespace Latihan_POS
                             }
                             editAlertBox.Visible = true;
                             editAlertBox.Text = "The data has been successfully updated";
-                            refreshEditPage(currentViewOnEdit);
                             txtUpdateKode.Focus();
-
                             refillProductsList();
+                            refreshEditPage(currentViewOnEdit);
                         }
                         else
                         {

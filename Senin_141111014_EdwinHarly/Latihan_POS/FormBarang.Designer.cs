@@ -47,6 +47,7 @@
             this.flatLabel2 = new FlatUI.FlatLabel();
             this.flatLabel1 = new FlatUI.FlatLabel();
             this.updateProductsPage = new System.Windows.Forms.TabPage();
+            this.editAlertBox = new FlatUI.FlatAlertBox();
             this.lastBtn = new FlatUI.FlatButton();
             this.nextBtn = new FlatUI.FlatButton();
             this.prevBtn = new FlatUI.FlatButton();
@@ -67,17 +68,16 @@
             this.flatLabel11 = new FlatUI.FlatLabel();
             this.flatLabel12 = new FlatUI.FlatLabel();
             this.viewProductsPage = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVBarang = new System.Windows.Forms.DataGridView();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatMax1 = new FlatUI.FlatMax();
             this.flatClose1 = new FlatUI.FlatClose();
-            this.editAlertBox = new FlatUI.FlatAlertBox();
             this.formSkin1.SuspendLayout();
             this.productsTabControl.SuspendLayout();
             this.addProductsPage.SuspendLayout();
             this.updateProductsPage.SuspendLayout();
             this.viewProductsPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVBarang)).BeginInit();
             this.SuspendLayout();
             // 
             // formSkin1
@@ -397,6 +397,19 @@
             this.updateProductsPage.TabIndex = 7;
             this.updateProductsPage.Text = "Edit";
             // 
+            // editAlertBox
+            // 
+            this.editAlertBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.editAlertBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editAlertBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.editAlertBox.kind = FlatUI.FlatAlertBox._Kind.Success;
+            this.editAlertBox.Location = new System.Drawing.Point(333, 16);
+            this.editAlertBox.Name = "editAlertBox";
+            this.editAlertBox.Size = new System.Drawing.Size(452, 42);
+            this.editAlertBox.TabIndex = 34;
+            this.editAlertBox.Text = "flatAlertBox1";
+            this.editAlertBox.Visible = false;
+            // 
             // lastBtn
             // 
             this.lastBtn.BackColor = System.Drawing.Color.Transparent;
@@ -682,7 +695,7 @@
             // viewProductsPage
             // 
             this.viewProductsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.viewProductsPage.Controls.Add(this.dataGridView1);
+            this.viewProductsPage.Controls.Add(this.DGVBarang);
             this.viewProductsPage.Location = new System.Drawing.Point(4, 44);
             this.viewProductsPage.Name = "viewProductsPage";
             this.viewProductsPage.Padding = new System.Windows.Forms.Padding(3);
@@ -690,16 +703,16 @@
             this.viewProductsPage.TabIndex = 9;
             this.viewProductsPage.Text = "View";
             // 
-            // dataGridView1
+            // DGVBarang
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(793, 306);
-            this.dataGridView1.TabIndex = 0;
+            this.DGVBarang.AllowUserToAddRows = false;
+            this.DGVBarang.AllowUserToDeleteRows = false;
+            this.DGVBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVBarang.Location = new System.Drawing.Point(6, 23);
+            this.DGVBarang.Name = "DGVBarang";
+            this.DGVBarang.ReadOnly = true;
+            this.DGVBarang.Size = new System.Drawing.Size(793, 289);
+            this.DGVBarang.TabIndex = 0;
             // 
             // flatMini1
             // 
@@ -743,19 +756,6 @@
             this.flatClose1.Text = "flatClose1";
             this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // editAlertBox
-            // 
-            this.editAlertBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.editAlertBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editAlertBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.editAlertBox.kind = FlatUI.FlatAlertBox._Kind.Success;
-            this.editAlertBox.Location = new System.Drawing.Point(333, 16);
-            this.editAlertBox.Name = "editAlertBox";
-            this.editAlertBox.Size = new System.Drawing.Size(452, 42);
-            this.editAlertBox.TabIndex = 34;
-            this.editAlertBox.Text = "flatAlertBox1";
-            this.editAlertBox.Visible = false;
-            // 
             // FormBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -775,7 +775,7 @@
             this.updateProductsPage.ResumeLayout(false);
             this.updateProductsPage.PerformLayout();
             this.viewProductsPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVBarang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -820,7 +820,7 @@
         private FlatUI.FlatLabel txtAddID;
         private FlatUI.FlatLabel txtUpdateID;
         private FlatUI.FlatButton btnDelete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVBarang;
         private FlatUI.FlatButton lastBtn;
         private FlatUI.FlatButton nextBtn;
         private FlatUI.FlatButton prevBtn;
