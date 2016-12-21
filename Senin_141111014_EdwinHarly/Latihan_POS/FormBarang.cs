@@ -198,7 +198,7 @@ namespace Latihan_POS
                                 
                             }
                             addAlertBox.Visible = true;
-                            resetAddField();
+                            
                             txtAddKode.Focus();
 
                             Products tmp = new Products();
@@ -209,6 +209,7 @@ namespace Latihan_POS
                             tmp.cost = Convert.ToInt64(txtAddHrgHPP.Text);
                             tmp.price = Convert.ToInt64(txtAddHrgJual.Text);
                             productsList.Add(tmp);
+                            resetAddField();
                         }
                         else
                         {
