@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.formSkin1 = new FlatUI.FormSkin();
+            this.btnFrmBeli = new FlatUI.FlatButton();
             this.flatClose1 = new FlatUI.FlatClose();
             this.flatMini1 = new FlatUI.FlatMini();
             this.btnFrmSupp = new FlatUI.FlatButton();
             this.btnFrmCust = new FlatUI.FlatButton();
             this.btnFrmBrg = new FlatUI.FlatButton();
-            this.btnFrmBeli = new FlatUI.FlatButton();
-            this.btnFrmJual = new FlatUI.FlatButton();
             this.formSkin1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +43,6 @@
             this.formSkin1.BackColor = System.Drawing.Color.White;
             this.formSkin1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.formSkin1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
-            this.formSkin1.Controls.Add(this.btnFrmJual);
             this.formSkin1.Controls.Add(this.btnFrmBeli);
             this.formSkin1.Controls.Add(this.flatClose1);
             this.formSkin1.Controls.Add(this.flatMini1);
@@ -61,6 +59,21 @@
             this.formSkin1.Size = new System.Drawing.Size(480, 346);
             this.formSkin1.TabIndex = 0;
             this.formSkin1.Text = "Menu - Point of Sale";
+            // 
+            // btnFrmBeli
+            // 
+            this.btnFrmBeli.BackColor = System.Drawing.Color.Transparent;
+            this.btnFrmBeli.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnFrmBeli.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFrmBeli.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnFrmBeli.Location = new System.Drawing.Point(32, 211);
+            this.btnFrmBeli.Name = "btnFrmBeli";
+            this.btnFrmBeli.Rounded = false;
+            this.btnFrmBeli.Size = new System.Drawing.Size(110, 102);
+            this.btnFrmBeli.TabIndex = 5;
+            this.btnFrmBeli.Text = "Transactions";
+            this.btnFrmBeli.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnFrmBeli.Click += new System.EventHandler(this.btnFrmBeli_Click);
             // 
             // flatClose1
             // 
@@ -133,34 +146,6 @@
             this.btnFrmBrg.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnFrmBrg.Click += new System.EventHandler(this.btnFrmBrg_Click);
             // 
-            // btnFrmBeli
-            // 
-            this.btnFrmBeli.BackColor = System.Drawing.Color.Transparent;
-            this.btnFrmBeli.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.btnFrmBeli.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFrmBeli.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnFrmBeli.Location = new System.Drawing.Point(32, 211);
-            this.btnFrmBeli.Name = "btnFrmBeli";
-            this.btnFrmBeli.Rounded = false;
-            this.btnFrmBeli.Size = new System.Drawing.Size(110, 102);
-            this.btnFrmBeli.TabIndex = 5;
-            this.btnFrmBeli.Text = "Beli";
-            this.btnFrmBeli.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // btnFrmJual
-            // 
-            this.btnFrmJual.BackColor = System.Drawing.Color.Transparent;
-            this.btnFrmJual.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.btnFrmJual.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFrmJual.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnFrmJual.Location = new System.Drawing.Point(184, 211);
-            this.btnFrmJual.Name = "btnFrmJual";
-            this.btnFrmJual.Rounded = false;
-            this.btnFrmJual.Size = new System.Drawing.Size(110, 102);
-            this.btnFrmJual.TabIndex = 6;
-            this.btnFrmJual.Text = "Jual";
-            this.btnFrmJual.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
             // FormPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +170,6 @@
         private FlatUI.FlatButton btnFrmBrg;
         private FlatUI.FlatClose flatClose1;
         private FlatUI.FlatMini flatMini1;
-        private FlatUI.FlatButton btnFrmJual;
         private FlatUI.FlatButton btnFrmBeli;
     }
 }

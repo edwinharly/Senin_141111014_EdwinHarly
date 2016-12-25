@@ -36,5 +36,11 @@ namespace Latihan_POS
             FormSupplier frmSupp = new FormSupplier();
             frmSupp.Show();
         }
+
+        private void btnFrmBeli_Click(object sender, EventArgs e)
+        {
+            FormTransaction frmTrns = new FormTransaction();
+            frmTrns.Show();
+        }
     }
 }
