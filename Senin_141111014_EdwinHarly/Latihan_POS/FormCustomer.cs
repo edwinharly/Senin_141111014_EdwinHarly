@@ -28,12 +28,12 @@ namespace Latihan_POS
         // Form Variables
         public class Customers
         {
-            public string id { get; set; }
-            public string address { set; get; }
-            public string name { set; get; }
-            public string zipcode { set; get; }
-            public string phone { set; get; }
-            public string email { set; get; }
+            public string id        { set; get; }
+            public string address   { set; get; }
+            public string name      { set; get; }
+            public string zipcode   { set; get; }
+            public string phone     { set; get; }
+            public string email     { set; get; }
         }
         public static List<Customers> customersList = new List<Customers>();
         public int currentViewOnEdit = 0;

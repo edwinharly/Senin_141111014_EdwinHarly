@@ -31,7 +31,16 @@
             this.formSkin1 = new FlatUI.FormSkin();
             this.flatTabControl1 = new FlatUI.FlatTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBeliReset = new FlatUI.FlatButton();
+            this.btnBeliSubmit = new FlatUI.FlatButton();
+            this.numBeliQty = new FlatUI.FlatNumeric();
+            this.cmbBeliProdName = new FlatUI.FlatComboBox();
+            this.cmbBeliSuppName = new FlatUI.FlatComboBox();
+            this.txtBeliTotal = new FlatUI.FlatLabel();
+            this.txtBeliPrice = new FlatUI.FlatLabel();
+            this.txtBeliSuppID = new FlatUI.FlatLabel();
+            this.txtBeliProdID = new FlatUI.FlatLabel();
+            this.txtBeliID = new FlatUI.FlatLabel();
             this.flatLabel8 = new FlatUI.FlatLabel();
             this.flatLabel7 = new FlatUI.FlatLabel();
             this.flatLabel6 = new FlatUI.FlatLabel();
@@ -40,16 +49,17 @@
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel2 = new FlatUI.FlatLabel();
             this.flatLabel1 = new FlatUI.FlatLabel();
-            this.flatButton2 = new FlatUI.FlatButton();
-            this.flatButton1 = new FlatUI.FlatButton();
-            this.flatLabel13 = new FlatUI.FlatLabel();
-            this.flatNumeric1 = new FlatUI.FlatNumeric();
-            this.flatLabel12 = new FlatUI.FlatLabel();
-            this.flatComboBox2 = new FlatUI.FlatComboBox();
-            this.flatLabel11 = new FlatUI.FlatLabel();
-            this.flatLabel10 = new FlatUI.FlatLabel();
-            this.flatComboBox1 = new FlatUI.FlatComboBox();
-            this.flatLabel9 = new FlatUI.FlatLabel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnJualReset = new FlatUI.FlatButton();
+            this.btnJualSubmit = new FlatUI.FlatButton();
+            this.txtJualTotal = new FlatUI.FlatLabel();
+            this.numJualQty = new FlatUI.FlatNumeric();
+            this.txtJualPrice = new FlatUI.FlatLabel();
+            this.cmbJualProdName = new FlatUI.FlatComboBox();
+            this.txtJualProdID = new FlatUI.FlatLabel();
+            this.txtJualCustID = new FlatUI.FlatLabel();
+            this.cmbJualCustName = new FlatUI.FlatComboBox();
+            this.txtJualID = new FlatUI.FlatLabel();
             this.flatLabel14 = new FlatUI.FlatLabel();
             this.flatLabel15 = new FlatUI.FlatLabel();
             this.flatLabel16 = new FlatUI.FlatLabel();
@@ -58,16 +68,6 @@
             this.flatLabel19 = new FlatUI.FlatLabel();
             this.flatLabel20 = new FlatUI.FlatLabel();
             this.flatLabel21 = new FlatUI.FlatLabel();
-            this.flatLabel22 = new FlatUI.FlatLabel();
-            this.flatLabel23 = new FlatUI.FlatLabel();
-            this.flatLabel24 = new FlatUI.FlatLabel();
-            this.flatLabel25 = new FlatUI.FlatLabel();
-            this.flatLabel26 = new FlatUI.FlatLabel();
-            this.flatComboBox3 = new FlatUI.FlatComboBox();
-            this.flatComboBox4 = new FlatUI.FlatComboBox();
-            this.flatNumeric2 = new FlatUI.FlatNumeric();
-            this.flatButton3 = new FlatUI.FlatButton();
-            this.flatButton4 = new FlatUI.FlatButton();
             this.formSkin1.SuspendLayout();
             this.flatTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -109,16 +109,16 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.tabPage1.Controls.Add(this.flatButton3);
-            this.tabPage1.Controls.Add(this.flatButton4);
-            this.tabPage1.Controls.Add(this.flatNumeric2);
-            this.tabPage1.Controls.Add(this.flatComboBox4);
-            this.tabPage1.Controls.Add(this.flatComboBox3);
-            this.tabPage1.Controls.Add(this.flatLabel26);
-            this.tabPage1.Controls.Add(this.flatLabel25);
-            this.tabPage1.Controls.Add(this.flatLabel24);
-            this.tabPage1.Controls.Add(this.flatLabel23);
-            this.tabPage1.Controls.Add(this.flatLabel22);
+            this.tabPage1.Controls.Add(this.btnBeliReset);
+            this.tabPage1.Controls.Add(this.btnBeliSubmit);
+            this.tabPage1.Controls.Add(this.numBeliQty);
+            this.tabPage1.Controls.Add(this.cmbBeliProdName);
+            this.tabPage1.Controls.Add(this.cmbBeliSuppName);
+            this.tabPage1.Controls.Add(this.txtBeliTotal);
+            this.tabPage1.Controls.Add(this.txtBeliPrice);
+            this.tabPage1.Controls.Add(this.txtBeliSuppID);
+            this.tabPage1.Controls.Add(this.txtBeliProdID);
+            this.tabPage1.Controls.Add(this.txtBeliID);
             this.tabPage1.Controls.Add(this.flatLabel8);
             this.tabPage1.Controls.Add(this.flatLabel7);
             this.tabPage1.Controls.Add(this.flatLabel6);
@@ -134,33 +134,141 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Purchase";
             // 
-            // tabPage2
+            // btnBeliReset
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.tabPage2.Controls.Add(this.flatButton2);
-            this.tabPage2.Controls.Add(this.flatButton1);
-            this.tabPage2.Controls.Add(this.flatLabel13);
-            this.tabPage2.Controls.Add(this.flatNumeric1);
-            this.tabPage2.Controls.Add(this.flatLabel12);
-            this.tabPage2.Controls.Add(this.flatComboBox2);
-            this.tabPage2.Controls.Add(this.flatLabel11);
-            this.tabPage2.Controls.Add(this.flatLabel10);
-            this.tabPage2.Controls.Add(this.flatComboBox1);
-            this.tabPage2.Controls.Add(this.flatLabel9);
-            this.tabPage2.Controls.Add(this.flatLabel14);
-            this.tabPage2.Controls.Add(this.flatLabel15);
-            this.tabPage2.Controls.Add(this.flatLabel16);
-            this.tabPage2.Controls.Add(this.flatLabel17);
-            this.tabPage2.Controls.Add(this.flatLabel18);
-            this.tabPage2.Controls.Add(this.flatLabel19);
-            this.tabPage2.Controls.Add(this.flatLabel20);
-            this.tabPage2.Controls.Add(this.flatLabel21);
-            this.tabPage2.Location = new System.Drawing.Point(4, 44);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(815, 319);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Sale";
+            this.btnBeliReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnBeliReset.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnBeliReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBeliReset.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnBeliReset.Location = new System.Drawing.Point(616, 242);
+            this.btnBeliReset.Name = "btnBeliReset";
+            this.btnBeliReset.Rounded = false;
+            this.btnBeliReset.Size = new System.Drawing.Size(106, 32);
+            this.btnBeliReset.TabIndex = 37;
+            this.btnBeliReset.Text = "Reset";
+            this.btnBeliReset.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // btnBeliSubmit
+            // 
+            this.btnBeliSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.btnBeliSubmit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnBeliSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBeliSubmit.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnBeliSubmit.Location = new System.Drawing.Point(616, 194);
+            this.btnBeliSubmit.Name = "btnBeliSubmit";
+            this.btnBeliSubmit.Rounded = false;
+            this.btnBeliSubmit.Size = new System.Drawing.Size(106, 32);
+            this.btnBeliSubmit.TabIndex = 36;
+            this.btnBeliSubmit.Text = "Submit";
+            this.btnBeliSubmit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // numBeliQty
+            // 
+            this.numBeliQty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.numBeliQty.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.numBeliQty.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.numBeliQty.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.numBeliQty.ForeColor = System.Drawing.Color.White;
+            this.numBeliQty.Location = new System.Drawing.Point(285, 220);
+            this.numBeliQty.Maximum = ((long)(9999999));
+            this.numBeliQty.Minimum = ((long)(0));
+            this.numBeliQty.Name = "numBeliQty";
+            this.numBeliQty.Size = new System.Drawing.Size(75, 30);
+            this.numBeliQty.TabIndex = 33;
+            this.numBeliQty.Text = "flatNumeric2";
+            this.numBeliQty.Value = ((long)(0));
+            // 
+            // cmbBeliProdName
+            // 
+            this.cmbBeliProdName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.cmbBeliProdName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbBeliProdName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbBeliProdName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBeliProdName.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmbBeliProdName.ForeColor = System.Drawing.Color.White;
+            this.cmbBeliProdName.FormattingEnabled = true;
+            this.cmbBeliProdName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.cmbBeliProdName.ItemHeight = 18;
+            this.cmbBeliProdName.Location = new System.Drawing.Point(285, 130);
+            this.cmbBeliProdName.Name = "cmbBeliProdName";
+            this.cmbBeliProdName.Size = new System.Drawing.Size(313, 24);
+            this.cmbBeliProdName.TabIndex = 30;
+            // 
+            // cmbBeliSuppName
+            // 
+            this.cmbBeliSuppName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.cmbBeliSuppName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbBeliSuppName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbBeliSuppName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBeliSuppName.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmbBeliSuppName.ForeColor = System.Drawing.Color.White;
+            this.cmbBeliSuppName.FormattingEnabled = true;
+            this.cmbBeliSuppName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.cmbBeliSuppName.ItemHeight = 18;
+            this.cmbBeliSuppName.Location = new System.Drawing.Point(285, 65);
+            this.cmbBeliSuppName.Name = "cmbBeliSuppName";
+            this.cmbBeliSuppName.Size = new System.Drawing.Size(313, 24);
+            this.cmbBeliSuppName.TabIndex = 29;
+            // 
+            // txtBeliTotal
+            // 
+            this.txtBeliTotal.AutoSize = true;
+            this.txtBeliTotal.BackColor = System.Drawing.Color.Transparent;
+            this.txtBeliTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBeliTotal.ForeColor = System.Drawing.Color.White;
+            this.txtBeliTotal.Location = new System.Drawing.Point(282, 257);
+            this.txtBeliTotal.Name = "txtBeliTotal";
+            this.txtBeliTotal.Size = new System.Drawing.Size(69, 17);
+            this.txtBeliTotal.TabIndex = 28;
+            this.txtBeliTotal.Text = "Product ID";
+            // 
+            // txtBeliPrice
+            // 
+            this.txtBeliPrice.AutoSize = true;
+            this.txtBeliPrice.BackColor = System.Drawing.Color.Transparent;
+            this.txtBeliPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBeliPrice.ForeColor = System.Drawing.Color.White;
+            this.txtBeliPrice.Location = new System.Drawing.Point(282, 194);
+            this.txtBeliPrice.Name = "txtBeliPrice";
+            this.txtBeliPrice.Size = new System.Drawing.Size(69, 17);
+            this.txtBeliPrice.TabIndex = 27;
+            this.txtBeliPrice.Text = "Product ID";
+            // 
+            // txtBeliSuppID
+            // 
+            this.txtBeliSuppID.AutoSize = true;
+            this.txtBeliSuppID.BackColor = System.Drawing.Color.Transparent;
+            this.txtBeliSuppID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBeliSuppID.ForeColor = System.Drawing.Color.White;
+            this.txtBeliSuppID.Location = new System.Drawing.Point(282, 99);
+            this.txtBeliSuppID.Name = "txtBeliSuppID";
+            this.txtBeliSuppID.Size = new System.Drawing.Size(69, 17);
+            this.txtBeliSuppID.TabIndex = 26;
+            this.txtBeliSuppID.Text = "Product ID";
+            // 
+            // txtBeliProdID
+            // 
+            this.txtBeliProdID.AutoSize = true;
+            this.txtBeliProdID.BackColor = System.Drawing.Color.Transparent;
+            this.txtBeliProdID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBeliProdID.ForeColor = System.Drawing.Color.White;
+            this.txtBeliProdID.Location = new System.Drawing.Point(282, 162);
+            this.txtBeliProdID.Name = "txtBeliProdID";
+            this.txtBeliProdID.Size = new System.Drawing.Size(69, 17);
+            this.txtBeliProdID.TabIndex = 25;
+            this.txtBeliProdID.Text = "Product ID";
+            // 
+            // txtBeliID
+            // 
+            this.txtBeliID.AutoSize = true;
+            this.txtBeliID.BackColor = System.Drawing.Color.Transparent;
+            this.txtBeliID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBeliID.ForeColor = System.Drawing.Color.White;
+            this.txtBeliID.Location = new System.Drawing.Point(282, 36);
+            this.txtBeliID.Name = "txtBeliID";
+            this.txtBeliID.Size = new System.Drawing.Size(76, 17);
+            this.txtBeliID.TabIndex = 24;
+            this.txtBeliID.Text = "Purchase ID";
             // 
             // flatLabel8
             // 
@@ -258,141 +366,169 @@
             this.flatLabel1.TabIndex = 16;
             this.flatLabel1.Text = "ID";
             // 
-            // flatButton2
+            // tabPage2
             // 
-            this.flatButton2.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton2.Location = new System.Drawing.Point(615, 245);
-            this.flatButton2.Name = "flatButton2";
-            this.flatButton2.Rounded = false;
-            this.flatButton2.Size = new System.Drawing.Size(106, 32);
-            this.flatButton2.TabIndex = 35;
-            this.flatButton2.Text = "Reset";
-            this.flatButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.tabPage2.Controls.Add(this.btnJualReset);
+            this.tabPage2.Controls.Add(this.btnJualSubmit);
+            this.tabPage2.Controls.Add(this.txtJualTotal);
+            this.tabPage2.Controls.Add(this.numJualQty);
+            this.tabPage2.Controls.Add(this.txtJualPrice);
+            this.tabPage2.Controls.Add(this.cmbJualProdName);
+            this.tabPage2.Controls.Add(this.txtJualProdID);
+            this.tabPage2.Controls.Add(this.txtJualCustID);
+            this.tabPage2.Controls.Add(this.cmbJualCustName);
+            this.tabPage2.Controls.Add(this.txtJualID);
+            this.tabPage2.Controls.Add(this.flatLabel14);
+            this.tabPage2.Controls.Add(this.flatLabel15);
+            this.tabPage2.Controls.Add(this.flatLabel16);
+            this.tabPage2.Controls.Add(this.flatLabel17);
+            this.tabPage2.Controls.Add(this.flatLabel18);
+            this.tabPage2.Controls.Add(this.flatLabel19);
+            this.tabPage2.Controls.Add(this.flatLabel20);
+            this.tabPage2.Controls.Add(this.flatLabel21);
+            this.tabPage2.Location = new System.Drawing.Point(4, 44);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(815, 319);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Sale";
             // 
-            // flatButton1
+            // btnJualReset
             // 
-            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton1.Location = new System.Drawing.Point(615, 197);
-            this.flatButton1.Name = "flatButton1";
-            this.flatButton1.Rounded = false;
-            this.flatButton1.Size = new System.Drawing.Size(106, 32);
-            this.flatButton1.TabIndex = 34;
-            this.flatButton1.Text = "Submit";
-            this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnJualReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnJualReset.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnJualReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJualReset.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnJualReset.Location = new System.Drawing.Point(615, 245);
+            this.btnJualReset.Name = "btnJualReset";
+            this.btnJualReset.Rounded = false;
+            this.btnJualReset.Size = new System.Drawing.Size(106, 32);
+            this.btnJualReset.TabIndex = 35;
+            this.btnJualReset.Text = "Reset";
+            this.btnJualReset.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // flatLabel13
+            // btnJualSubmit
             // 
-            this.flatLabel13.AutoSize = true;
-            this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel13.ForeColor = System.Drawing.Color.White;
-            this.flatLabel13.Location = new System.Drawing.Point(295, 260);
-            this.flatLabel13.Name = "flatLabel13";
-            this.flatLabel13.Size = new System.Drawing.Size(36, 17);
-            this.flatLabel13.TabIndex = 33;
-            this.flatLabel13.Text = "Total";
+            this.btnJualSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.btnJualSubmit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnJualSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJualSubmit.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnJualSubmit.Location = new System.Drawing.Point(615, 197);
+            this.btnJualSubmit.Name = "btnJualSubmit";
+            this.btnJualSubmit.Rounded = false;
+            this.btnJualSubmit.Size = new System.Drawing.Size(106, 32);
+            this.btnJualSubmit.TabIndex = 34;
+            this.btnJualSubmit.Text = "Submit";
+            this.btnJualSubmit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // flatNumeric1
+            // txtJualTotal
             // 
-            this.flatNumeric1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.flatNumeric1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.flatNumeric1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatNumeric1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatNumeric1.ForeColor = System.Drawing.Color.White;
-            this.flatNumeric1.Location = new System.Drawing.Point(298, 222);
-            this.flatNumeric1.Maximum = ((long)(9999999));
-            this.flatNumeric1.Minimum = ((long)(0));
-            this.flatNumeric1.Name = "flatNumeric1";
-            this.flatNumeric1.Size = new System.Drawing.Size(75, 30);
-            this.flatNumeric1.TabIndex = 32;
-            this.flatNumeric1.Text = "flatNumeric1";
-            this.flatNumeric1.Value = ((long)(0));
+            this.txtJualTotal.AutoSize = true;
+            this.txtJualTotal.BackColor = System.Drawing.Color.Transparent;
+            this.txtJualTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtJualTotal.ForeColor = System.Drawing.Color.White;
+            this.txtJualTotal.Location = new System.Drawing.Point(295, 260);
+            this.txtJualTotal.Name = "txtJualTotal";
+            this.txtJualTotal.Size = new System.Drawing.Size(36, 17);
+            this.txtJualTotal.TabIndex = 33;
+            this.txtJualTotal.Text = "Total";
             // 
-            // flatLabel12
+            // numJualQty
             // 
-            this.flatLabel12.AutoSize = true;
-            this.flatLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel12.ForeColor = System.Drawing.Color.White;
-            this.flatLabel12.Location = new System.Drawing.Point(295, 197);
-            this.flatLabel12.Name = "flatLabel12";
-            this.flatLabel12.Size = new System.Drawing.Size(36, 17);
-            this.flatLabel12.TabIndex = 31;
-            this.flatLabel12.Text = "Total";
+            this.numJualQty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.numJualQty.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.numJualQty.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.numJualQty.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.numJualQty.ForeColor = System.Drawing.Color.White;
+            this.numJualQty.Location = new System.Drawing.Point(298, 222);
+            this.numJualQty.Maximum = ((long)(9999999));
+            this.numJualQty.Minimum = ((long)(0));
+            this.numJualQty.Name = "numJualQty";
+            this.numJualQty.Size = new System.Drawing.Size(75, 30);
+            this.numJualQty.TabIndex = 32;
+            this.numJualQty.Text = "flatNumeric1";
+            this.numJualQty.Value = ((long)(0));
             // 
-            // flatComboBox2
+            // txtJualPrice
             // 
-            this.flatComboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.flatComboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.flatComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.flatComboBox2.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.flatComboBox2.ForeColor = System.Drawing.Color.White;
-            this.flatComboBox2.FormattingEnabled = true;
-            this.flatComboBox2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatComboBox2.ItemHeight = 18;
-            this.flatComboBox2.Location = new System.Drawing.Point(298, 133);
-            this.flatComboBox2.Name = "flatComboBox2";
-            this.flatComboBox2.Size = new System.Drawing.Size(284, 24);
-            this.flatComboBox2.TabIndex = 30;
+            this.txtJualPrice.AutoSize = true;
+            this.txtJualPrice.BackColor = System.Drawing.Color.Transparent;
+            this.txtJualPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtJualPrice.ForeColor = System.Drawing.Color.White;
+            this.txtJualPrice.Location = new System.Drawing.Point(295, 197);
+            this.txtJualPrice.Name = "txtJualPrice";
+            this.txtJualPrice.Size = new System.Drawing.Size(36, 17);
+            this.txtJualPrice.TabIndex = 31;
+            this.txtJualPrice.Text = "Total";
             // 
-            // flatLabel11
+            // cmbJualProdName
             // 
-            this.flatLabel11.AutoSize = true;
-            this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel11.ForeColor = System.Drawing.Color.White;
-            this.flatLabel11.Location = new System.Drawing.Point(295, 165);
-            this.flatLabel11.Name = "flatLabel11";
-            this.flatLabel11.Size = new System.Drawing.Size(36, 17);
-            this.flatLabel11.TabIndex = 29;
-            this.flatLabel11.Text = "Total";
+            this.cmbJualProdName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.cmbJualProdName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbJualProdName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbJualProdName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbJualProdName.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmbJualProdName.ForeColor = System.Drawing.Color.White;
+            this.cmbJualProdName.FormattingEnabled = true;
+            this.cmbJualProdName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.cmbJualProdName.ItemHeight = 18;
+            this.cmbJualProdName.Location = new System.Drawing.Point(298, 133);
+            this.cmbJualProdName.Name = "cmbJualProdName";
+            this.cmbJualProdName.Size = new System.Drawing.Size(284, 24);
+            this.cmbJualProdName.TabIndex = 30;
             // 
-            // flatLabel10
+            // txtJualProdID
             // 
-            this.flatLabel10.AutoSize = true;
-            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(295, 102);
-            this.flatLabel10.Name = "flatLabel10";
-            this.flatLabel10.Size = new System.Drawing.Size(36, 17);
-            this.flatLabel10.TabIndex = 28;
-            this.flatLabel10.Text = "Total";
+            this.txtJualProdID.AutoSize = true;
+            this.txtJualProdID.BackColor = System.Drawing.Color.Transparent;
+            this.txtJualProdID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtJualProdID.ForeColor = System.Drawing.Color.White;
+            this.txtJualProdID.Location = new System.Drawing.Point(295, 165);
+            this.txtJualProdID.Name = "txtJualProdID";
+            this.txtJualProdID.Size = new System.Drawing.Size(36, 17);
+            this.txtJualProdID.TabIndex = 29;
+            this.txtJualProdID.Text = "Total";
             // 
-            // flatComboBox1
+            // txtJualCustID
             // 
-            this.flatComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.flatComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.flatComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.flatComboBox1.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.flatComboBox1.ForeColor = System.Drawing.Color.White;
-            this.flatComboBox1.FormattingEnabled = true;
-            this.flatComboBox1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatComboBox1.ItemHeight = 18;
-            this.flatComboBox1.Location = new System.Drawing.Point(298, 68);
-            this.flatComboBox1.Name = "flatComboBox1";
-            this.flatComboBox1.Size = new System.Drawing.Size(284, 24);
-            this.flatComboBox1.TabIndex = 27;
+            this.txtJualCustID.AutoSize = true;
+            this.txtJualCustID.BackColor = System.Drawing.Color.Transparent;
+            this.txtJualCustID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtJualCustID.ForeColor = System.Drawing.Color.White;
+            this.txtJualCustID.Location = new System.Drawing.Point(295, 102);
+            this.txtJualCustID.Name = "txtJualCustID";
+            this.txtJualCustID.Size = new System.Drawing.Size(36, 17);
+            this.txtJualCustID.TabIndex = 28;
+            this.txtJualCustID.Text = "Total";
             // 
-            // flatLabel9
+            // cmbJualCustName
             // 
-            this.flatLabel9.AutoSize = true;
-            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel9.ForeColor = System.Drawing.Color.White;
-            this.flatLabel9.Location = new System.Drawing.Point(295, 39);
-            this.flatLabel9.Name = "flatLabel9";
-            this.flatLabel9.Size = new System.Drawing.Size(44, 17);
-            this.flatLabel9.TabIndex = 26;
-            this.flatLabel9.Text = "Sell ID";
+            this.cmbJualCustName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.cmbJualCustName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbJualCustName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbJualCustName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbJualCustName.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmbJualCustName.ForeColor = System.Drawing.Color.White;
+            this.cmbJualCustName.FormattingEnabled = true;
+            this.cmbJualCustName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.cmbJualCustName.ItemHeight = 18;
+            this.cmbJualCustName.Location = new System.Drawing.Point(298, 68);
+            this.cmbJualCustName.Name = "cmbJualCustName";
+            this.cmbJualCustName.Size = new System.Drawing.Size(284, 24);
+            this.cmbJualCustName.TabIndex = 27;
+            // 
+            // txtJualID
+            // 
+            this.txtJualID.AutoSize = true;
+            this.txtJualID.BackColor = System.Drawing.Color.Transparent;
+            this.txtJualID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtJualID.ForeColor = System.Drawing.Color.White;
+            this.txtJualID.Location = new System.Drawing.Point(295, 39);
+            this.txtJualID.Name = "txtJualID";
+            this.txtJualID.Size = new System.Drawing.Size(44, 17);
+            this.txtJualID.TabIndex = 26;
+            this.txtJualID.Text = "Sell ID";
             // 
             // flatLabel14
             // 
@@ -490,142 +626,6 @@
             this.flatLabel21.TabIndex = 18;
             this.flatLabel21.Text = "ID";
             // 
-            // flatLabel22
-            // 
-            this.flatLabel22.AutoSize = true;
-            this.flatLabel22.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel22.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel22.ForeColor = System.Drawing.Color.White;
-            this.flatLabel22.Location = new System.Drawing.Point(282, 36);
-            this.flatLabel22.Name = "flatLabel22";
-            this.flatLabel22.Size = new System.Drawing.Size(76, 17);
-            this.flatLabel22.TabIndex = 24;
-            this.flatLabel22.Text = "Purchase ID";
-            // 
-            // flatLabel23
-            // 
-            this.flatLabel23.AutoSize = true;
-            this.flatLabel23.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel23.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel23.ForeColor = System.Drawing.Color.White;
-            this.flatLabel23.Location = new System.Drawing.Point(282, 162);
-            this.flatLabel23.Name = "flatLabel23";
-            this.flatLabel23.Size = new System.Drawing.Size(69, 17);
-            this.flatLabel23.TabIndex = 25;
-            this.flatLabel23.Text = "Product ID";
-            // 
-            // flatLabel24
-            // 
-            this.flatLabel24.AutoSize = true;
-            this.flatLabel24.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel24.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel24.ForeColor = System.Drawing.Color.White;
-            this.flatLabel24.Location = new System.Drawing.Point(282, 99);
-            this.flatLabel24.Name = "flatLabel24";
-            this.flatLabel24.Size = new System.Drawing.Size(69, 17);
-            this.flatLabel24.TabIndex = 26;
-            this.flatLabel24.Text = "Product ID";
-            // 
-            // flatLabel25
-            // 
-            this.flatLabel25.AutoSize = true;
-            this.flatLabel25.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel25.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel25.ForeColor = System.Drawing.Color.White;
-            this.flatLabel25.Location = new System.Drawing.Point(282, 194);
-            this.flatLabel25.Name = "flatLabel25";
-            this.flatLabel25.Size = new System.Drawing.Size(69, 17);
-            this.flatLabel25.TabIndex = 27;
-            this.flatLabel25.Text = "Product ID";
-            // 
-            // flatLabel26
-            // 
-            this.flatLabel26.AutoSize = true;
-            this.flatLabel26.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel26.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.flatLabel26.ForeColor = System.Drawing.Color.White;
-            this.flatLabel26.Location = new System.Drawing.Point(282, 257);
-            this.flatLabel26.Name = "flatLabel26";
-            this.flatLabel26.Size = new System.Drawing.Size(69, 17);
-            this.flatLabel26.TabIndex = 28;
-            this.flatLabel26.Text = "Product ID";
-            // 
-            // flatComboBox3
-            // 
-            this.flatComboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.flatComboBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.flatComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.flatComboBox3.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.flatComboBox3.ForeColor = System.Drawing.Color.White;
-            this.flatComboBox3.FormattingEnabled = true;
-            this.flatComboBox3.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatComboBox3.ItemHeight = 18;
-            this.flatComboBox3.Location = new System.Drawing.Point(285, 65);
-            this.flatComboBox3.Name = "flatComboBox3";
-            this.flatComboBox3.Size = new System.Drawing.Size(313, 24);
-            this.flatComboBox3.TabIndex = 29;
-            // 
-            // flatComboBox4
-            // 
-            this.flatComboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.flatComboBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.flatComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.flatComboBox4.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.flatComboBox4.ForeColor = System.Drawing.Color.White;
-            this.flatComboBox4.FormattingEnabled = true;
-            this.flatComboBox4.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatComboBox4.ItemHeight = 18;
-            this.flatComboBox4.Location = new System.Drawing.Point(285, 130);
-            this.flatComboBox4.Name = "flatComboBox4";
-            this.flatComboBox4.Size = new System.Drawing.Size(313, 24);
-            this.flatComboBox4.TabIndex = 30;
-            // 
-            // flatNumeric2
-            // 
-            this.flatNumeric2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.flatNumeric2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.flatNumeric2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatNumeric2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatNumeric2.ForeColor = System.Drawing.Color.White;
-            this.flatNumeric2.Location = new System.Drawing.Point(285, 220);
-            this.flatNumeric2.Maximum = ((long)(9999999));
-            this.flatNumeric2.Minimum = ((long)(0));
-            this.flatNumeric2.Name = "flatNumeric2";
-            this.flatNumeric2.Size = new System.Drawing.Size(75, 30);
-            this.flatNumeric2.TabIndex = 33;
-            this.flatNumeric2.Text = "flatNumeric2";
-            this.flatNumeric2.Value = ((long)(0));
-            // 
-            // flatButton3
-            // 
-            this.flatButton3.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton3.Location = new System.Drawing.Point(616, 242);
-            this.flatButton3.Name = "flatButton3";
-            this.flatButton3.Rounded = false;
-            this.flatButton3.Size = new System.Drawing.Size(106, 32);
-            this.flatButton3.TabIndex = 37;
-            this.flatButton3.Text = "Reset";
-            this.flatButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // flatButton4
-            // 
-            this.flatButton4.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton4.Location = new System.Drawing.Point(616, 194);
-            this.flatButton4.Name = "flatButton4";
-            this.flatButton4.Rounded = false;
-            this.flatButton4.Size = new System.Drawing.Size(106, 32);
-            this.flatButton4.TabIndex = 36;
-            this.flatButton4.Text = "Submit";
-            this.flatButton4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
             // FormTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -662,16 +662,16 @@
         private FlatUI.FlatLabel flatLabel3;
         private FlatUI.FlatLabel flatLabel2;
         private FlatUI.FlatLabel flatLabel1;
-        private FlatUI.FlatButton flatButton2;
-        private FlatUI.FlatButton flatButton1;
-        private FlatUI.FlatLabel flatLabel13;
-        private FlatUI.FlatNumeric flatNumeric1;
-        private FlatUI.FlatLabel flatLabel12;
-        private FlatUI.FlatComboBox flatComboBox2;
-        private FlatUI.FlatLabel flatLabel11;
-        private FlatUI.FlatLabel flatLabel10;
-        private FlatUI.FlatComboBox flatComboBox1;
-        private FlatUI.FlatLabel flatLabel9;
+        private FlatUI.FlatButton btnJualReset;
+        private FlatUI.FlatButton btnJualSubmit;
+        private FlatUI.FlatLabel txtJualTotal;
+        private FlatUI.FlatNumeric numJualQty;
+        private FlatUI.FlatLabel txtJualPrice;
+        private FlatUI.FlatComboBox cmbJualProdName;
+        private FlatUI.FlatLabel txtJualProdID;
+        private FlatUI.FlatLabel txtJualCustID;
+        private FlatUI.FlatComboBox cmbJualCustName;
+        private FlatUI.FlatLabel txtJualID;
         private FlatUI.FlatLabel flatLabel14;
         private FlatUI.FlatLabel flatLabel15;
         private FlatUI.FlatLabel flatLabel16;
@@ -680,15 +680,15 @@
         private FlatUI.FlatLabel flatLabel19;
         private FlatUI.FlatLabel flatLabel20;
         private FlatUI.FlatLabel flatLabel21;
-        private FlatUI.FlatButton flatButton3;
-        private FlatUI.FlatButton flatButton4;
-        private FlatUI.FlatNumeric flatNumeric2;
-        private FlatUI.FlatComboBox flatComboBox4;
-        private FlatUI.FlatComboBox flatComboBox3;
-        private FlatUI.FlatLabel flatLabel26;
-        private FlatUI.FlatLabel flatLabel25;
-        private FlatUI.FlatLabel flatLabel24;
-        private FlatUI.FlatLabel flatLabel23;
-        private FlatUI.FlatLabel flatLabel22;
+        private FlatUI.FlatButton btnBeliReset;
+        private FlatUI.FlatButton btnBeliSubmit;
+        private FlatUI.FlatNumeric numBeliQty;
+        private FlatUI.FlatComboBox cmbBeliProdName;
+        private FlatUI.FlatComboBox cmbBeliSuppName;
+        private FlatUI.FlatLabel txtBeliTotal;
+        private FlatUI.FlatLabel txtBeliPrice;
+        private FlatUI.FlatLabel txtBeliSuppID;
+        private FlatUI.FlatLabel txtBeliProdID;
+        private FlatUI.FlatLabel txtBeliID;
     }
 }
