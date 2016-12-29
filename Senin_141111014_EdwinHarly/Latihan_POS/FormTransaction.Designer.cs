@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.formSkin1 = new FlatUI.FormSkin();
+            this.flatMini1 = new FlatUI.FlatMini();
+            this.flatClose1 = new FlatUI.FlatClose();
             this.flatTabControl1 = new FlatUI.FlatTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnBeliReset = new FlatUI.FlatButton();
             this.btnBeliSubmit = new FlatUI.FlatButton();
-            this.numBeliQty = new FlatUI.FlatNumeric();
             this.cmbBeliProdName = new FlatUI.FlatComboBox();
             this.cmbBeliSuppName = new FlatUI.FlatComboBox();
             this.txtBeliTotal = new FlatUI.FlatLabel();
@@ -53,7 +54,6 @@
             this.btnJualReset = new FlatUI.FlatButton();
             this.btnJualSubmit = new FlatUI.FlatButton();
             this.txtJualTotal = new FlatUI.FlatLabel();
-            this.numJualQty = new FlatUI.FlatNumeric();
             this.txtJualPrice = new FlatUI.FlatLabel();
             this.cmbJualProdName = new FlatUI.FlatComboBox();
             this.txtJualProdID = new FlatUI.FlatLabel();
@@ -68,10 +68,16 @@
             this.flatLabel19 = new FlatUI.FlatLabel();
             this.flatLabel20 = new FlatUI.FlatLabel();
             this.flatLabel21 = new FlatUI.FlatLabel();
+            this.numBeliQty = new System.Windows.Forms.NumericUpDown();
+            this.numJualQty = new System.Windows.Forms.NumericUpDown();
+            this.alertJual = new FlatUI.FlatAlertBox();
+            this.alertBeli = new FlatUI.FlatAlertBox();
             this.formSkin1.SuspendLayout();
             this.flatTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBeliQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numJualQty)).BeginInit();
             this.SuspendLayout();
             // 
             // formSkin1
@@ -79,6 +85,8 @@
             this.formSkin1.BackColor = System.Drawing.Color.White;
             this.formSkin1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.formSkin1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.formSkin1.Controls.Add(this.flatMini1);
+            this.formSkin1.Controls.Add(this.flatClose1);
             this.formSkin1.Controls.Add(this.flatTabControl1);
             this.formSkin1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formSkin1.FlatColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
@@ -90,6 +98,32 @@
             this.formSkin1.Size = new System.Drawing.Size(823, 416);
             this.formSkin1.TabIndex = 0;
             this.formSkin1.Text = "Transactions";
+            // 
+            // flatMini1
+            // 
+            this.flatMini1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flatMini1.BackColor = System.Drawing.Color.White;
+            this.flatMini1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.flatMini1.Font = new System.Drawing.Font("Marlett", 12F);
+            this.flatMini1.Location = new System.Drawing.Point(777, 3);
+            this.flatMini1.Name = "flatMini1";
+            this.flatMini1.Size = new System.Drawing.Size(18, 18);
+            this.flatMini1.TabIndex = 2;
+            this.flatMini1.Text = "flatMini1";
+            this.flatMini1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // flatClose1
+            // 
+            this.flatClose1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flatClose1.BackColor = System.Drawing.Color.White;
+            this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
+            this.flatClose1.Location = new System.Drawing.Point(801, 3);
+            this.flatClose1.Name = "flatClose1";
+            this.flatClose1.Size = new System.Drawing.Size(18, 18);
+            this.flatClose1.TabIndex = 1;
+            this.flatClose1.Text = "flatClose1";
+            this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
             // flatTabControl1
             // 
@@ -109,9 +143,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.tabPage1.Controls.Add(this.alertBeli);
+            this.tabPage1.Controls.Add(this.numBeliQty);
             this.tabPage1.Controls.Add(this.btnBeliReset);
             this.tabPage1.Controls.Add(this.btnBeliSubmit);
-            this.tabPage1.Controls.Add(this.numBeliQty);
             this.tabPage1.Controls.Add(this.cmbBeliProdName);
             this.tabPage1.Controls.Add(this.cmbBeliSuppName);
             this.tabPage1.Controls.Add(this.txtBeliTotal);
@@ -140,13 +175,14 @@
             this.btnBeliReset.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnBeliReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBeliReset.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnBeliReset.Location = new System.Drawing.Point(616, 242);
+            this.btnBeliReset.Location = new System.Drawing.Point(618, 220);
             this.btnBeliReset.Name = "btnBeliReset";
             this.btnBeliReset.Rounded = false;
             this.btnBeliReset.Size = new System.Drawing.Size(106, 32);
             this.btnBeliReset.TabIndex = 37;
             this.btnBeliReset.Text = "Reset";
             this.btnBeliReset.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnBeliReset.Click += new System.EventHandler(this.btnBeliReset_Click);
             // 
             // btnBeliSubmit
             // 
@@ -154,29 +190,14 @@
             this.btnBeliSubmit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnBeliSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBeliSubmit.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnBeliSubmit.Location = new System.Drawing.Point(616, 194);
+            this.btnBeliSubmit.Location = new System.Drawing.Point(618, 172);
             this.btnBeliSubmit.Name = "btnBeliSubmit";
             this.btnBeliSubmit.Rounded = false;
             this.btnBeliSubmit.Size = new System.Drawing.Size(106, 32);
             this.btnBeliSubmit.TabIndex = 36;
             this.btnBeliSubmit.Text = "Submit";
             this.btnBeliSubmit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // numBeliQty
-            // 
-            this.numBeliQty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.numBeliQty.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.numBeliQty.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.numBeliQty.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numBeliQty.ForeColor = System.Drawing.Color.White;
-            this.numBeliQty.Location = new System.Drawing.Point(285, 220);
-            this.numBeliQty.Maximum = ((long)(9999999));
-            this.numBeliQty.Minimum = ((long)(0));
-            this.numBeliQty.Name = "numBeliQty";
-            this.numBeliQty.Size = new System.Drawing.Size(75, 30);
-            this.numBeliQty.TabIndex = 33;
-            this.numBeliQty.Text = "flatNumeric2";
-            this.numBeliQty.Value = ((long)(0));
+            this.btnBeliSubmit.Click += new System.EventHandler(this.btnBeliSubmit_Click);
             // 
             // cmbBeliProdName
             // 
@@ -189,10 +210,11 @@
             this.cmbBeliProdName.FormattingEnabled = true;
             this.cmbBeliProdName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.cmbBeliProdName.ItemHeight = 18;
-            this.cmbBeliProdName.Location = new System.Drawing.Point(285, 130);
+            this.cmbBeliProdName.Location = new System.Drawing.Point(287, 108);
             this.cmbBeliProdName.Name = "cmbBeliProdName";
             this.cmbBeliProdName.Size = new System.Drawing.Size(313, 24);
             this.cmbBeliProdName.TabIndex = 30;
+            this.cmbBeliProdName.SelectedIndexChanged += new System.EventHandler(this.cmbBeliProdName_SelectedIndexChanged);
             // 
             // cmbBeliSuppName
             // 
@@ -205,10 +227,12 @@
             this.cmbBeliSuppName.FormattingEnabled = true;
             this.cmbBeliSuppName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.cmbBeliSuppName.ItemHeight = 18;
-            this.cmbBeliSuppName.Location = new System.Drawing.Point(285, 65);
+            this.cmbBeliSuppName.Location = new System.Drawing.Point(287, 43);
             this.cmbBeliSuppName.Name = "cmbBeliSuppName";
             this.cmbBeliSuppName.Size = new System.Drawing.Size(313, 24);
+            this.cmbBeliSuppName.Sorted = true;
             this.cmbBeliSuppName.TabIndex = 29;
+            this.cmbBeliSuppName.SelectedIndexChanged += new System.EventHandler(this.cmbBeliSuppName_SelectedIndexChanged);
             // 
             // txtBeliTotal
             // 
@@ -216,11 +240,11 @@
             this.txtBeliTotal.BackColor = System.Drawing.Color.Transparent;
             this.txtBeliTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtBeliTotal.ForeColor = System.Drawing.Color.White;
-            this.txtBeliTotal.Location = new System.Drawing.Point(282, 257);
+            this.txtBeliTotal.Location = new System.Drawing.Point(284, 235);
             this.txtBeliTotal.Name = "txtBeliTotal";
-            this.txtBeliTotal.Size = new System.Drawing.Size(69, 17);
+            this.txtBeliTotal.Size = new System.Drawing.Size(15, 17);
             this.txtBeliTotal.TabIndex = 28;
-            this.txtBeliTotal.Text = "Product ID";
+            this.txtBeliTotal.Text = "0";
             // 
             // txtBeliPrice
             // 
@@ -228,11 +252,11 @@
             this.txtBeliPrice.BackColor = System.Drawing.Color.Transparent;
             this.txtBeliPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtBeliPrice.ForeColor = System.Drawing.Color.White;
-            this.txtBeliPrice.Location = new System.Drawing.Point(282, 194);
+            this.txtBeliPrice.Location = new System.Drawing.Point(284, 172);
             this.txtBeliPrice.Name = "txtBeliPrice";
-            this.txtBeliPrice.Size = new System.Drawing.Size(69, 17);
+            this.txtBeliPrice.Size = new System.Drawing.Size(15, 17);
             this.txtBeliPrice.TabIndex = 27;
-            this.txtBeliPrice.Text = "Product ID";
+            this.txtBeliPrice.Text = "0";
             // 
             // txtBeliSuppID
             // 
@@ -240,11 +264,11 @@
             this.txtBeliSuppID.BackColor = System.Drawing.Color.Transparent;
             this.txtBeliSuppID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtBeliSuppID.ForeColor = System.Drawing.Color.White;
-            this.txtBeliSuppID.Location = new System.Drawing.Point(282, 99);
+            this.txtBeliSuppID.Location = new System.Drawing.Point(284, 77);
             this.txtBeliSuppID.Name = "txtBeliSuppID";
-            this.txtBeliSuppID.Size = new System.Drawing.Size(69, 17);
+            this.txtBeliSuppID.Size = new System.Drawing.Size(105, 17);
             this.txtBeliSuppID.TabIndex = 26;
-            this.txtBeliSuppID.Text = "Product ID";
+            this.txtBeliSuppID.Text = "Select a Supplier";
             // 
             // txtBeliProdID
             // 
@@ -252,11 +276,11 @@
             this.txtBeliProdID.BackColor = System.Drawing.Color.Transparent;
             this.txtBeliProdID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtBeliProdID.ForeColor = System.Drawing.Color.White;
-            this.txtBeliProdID.Location = new System.Drawing.Point(282, 162);
+            this.txtBeliProdID.Location = new System.Drawing.Point(284, 140);
             this.txtBeliProdID.Name = "txtBeliProdID";
-            this.txtBeliProdID.Size = new System.Drawing.Size(69, 17);
+            this.txtBeliProdID.Size = new System.Drawing.Size(102, 17);
             this.txtBeliProdID.TabIndex = 25;
-            this.txtBeliProdID.Text = "Product ID";
+            this.txtBeliProdID.Text = "Select a Product";
             // 
             // txtBeliID
             // 
@@ -264,7 +288,7 @@
             this.txtBeliID.BackColor = System.Drawing.Color.Transparent;
             this.txtBeliID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtBeliID.ForeColor = System.Drawing.Color.White;
-            this.txtBeliID.Location = new System.Drawing.Point(282, 36);
+            this.txtBeliID.Location = new System.Drawing.Point(284, 14);
             this.txtBeliID.Name = "txtBeliID";
             this.txtBeliID.Size = new System.Drawing.Size(76, 17);
             this.txtBeliID.TabIndex = 24;
@@ -276,7 +300,7 @@
             this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel8.ForeColor = System.Drawing.Color.White;
-            this.flatLabel8.Location = new System.Drawing.Point(83, 257);
+            this.flatLabel8.Location = new System.Drawing.Point(117, 235);
             this.flatLabel8.Name = "flatLabel8";
             this.flatLabel8.Size = new System.Drawing.Size(36, 17);
             this.flatLabel8.TabIndex = 23;
@@ -288,7 +312,7 @@
             this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(83, 194);
+            this.flatLabel7.Location = new System.Drawing.Point(117, 172);
             this.flatLabel7.Name = "flatLabel7";
             this.flatLabel7.Size = new System.Drawing.Size(36, 17);
             this.flatLabel7.TabIndex = 22;
@@ -300,7 +324,7 @@
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel6.ForeColor = System.Drawing.Color.White;
-            this.flatLabel6.Location = new System.Drawing.Point(83, 225);
+            this.flatLabel6.Location = new System.Drawing.Point(117, 203);
             this.flatLabel6.Name = "flatLabel6";
             this.flatLabel6.Size = new System.Drawing.Size(56, 17);
             this.flatLabel6.TabIndex = 21;
@@ -312,7 +336,7 @@
             this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel5.ForeColor = System.Drawing.Color.White;
-            this.flatLabel5.Location = new System.Drawing.Point(83, 162);
+            this.flatLabel5.Location = new System.Drawing.Point(117, 140);
             this.flatLabel5.Name = "flatLabel5";
             this.flatLabel5.Size = new System.Drawing.Size(78, 17);
             this.flatLabel5.TabIndex = 20;
@@ -324,7 +348,7 @@
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel4.ForeColor = System.Drawing.Color.White;
-            this.flatLabel4.Location = new System.Drawing.Point(83, 99);
+            this.flatLabel4.Location = new System.Drawing.Point(117, 77);
             this.flatLabel4.Name = "flatLabel4";
             this.flatLabel4.Size = new System.Drawing.Size(81, 17);
             this.flatLabel4.TabIndex = 19;
@@ -336,7 +360,7 @@
             this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel3.ForeColor = System.Drawing.Color.White;
-            this.flatLabel3.Location = new System.Drawing.Point(83, 130);
+            this.flatLabel3.Location = new System.Drawing.Point(117, 108);
             this.flatLabel3.Name = "flatLabel3";
             this.flatLabel3.Size = new System.Drawing.Size(101, 17);
             this.flatLabel3.TabIndex = 18;
@@ -348,7 +372,7 @@
             this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel2.ForeColor = System.Drawing.Color.White;
-            this.flatLabel2.Location = new System.Drawing.Point(83, 65);
+            this.flatLabel2.Location = new System.Drawing.Point(117, 43);
             this.flatLabel2.Name = "flatLabel2";
             this.flatLabel2.Size = new System.Drawing.Size(104, 17);
             this.flatLabel2.TabIndex = 17;
@@ -360,7 +384,7 @@
             this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel1.ForeColor = System.Drawing.Color.White;
-            this.flatLabel1.Location = new System.Drawing.Point(83, 36);
+            this.flatLabel1.Location = new System.Drawing.Point(117, 14);
             this.flatLabel1.Name = "flatLabel1";
             this.flatLabel1.Size = new System.Drawing.Size(20, 17);
             this.flatLabel1.TabIndex = 16;
@@ -369,10 +393,11 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.tabPage2.Controls.Add(this.alertJual);
+            this.tabPage2.Controls.Add(this.numJualQty);
             this.tabPage2.Controls.Add(this.btnJualReset);
             this.tabPage2.Controls.Add(this.btnJualSubmit);
             this.tabPage2.Controls.Add(this.txtJualTotal);
-            this.tabPage2.Controls.Add(this.numJualQty);
             this.tabPage2.Controls.Add(this.txtJualPrice);
             this.tabPage2.Controls.Add(this.cmbJualProdName);
             this.tabPage2.Controls.Add(this.txtJualProdID);
@@ -400,13 +425,14 @@
             this.btnJualReset.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnJualReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJualReset.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnJualReset.Location = new System.Drawing.Point(615, 245);
+            this.btnJualReset.Location = new System.Drawing.Point(615, 225);
             this.btnJualReset.Name = "btnJualReset";
             this.btnJualReset.Rounded = false;
             this.btnJualReset.Size = new System.Drawing.Size(106, 32);
             this.btnJualReset.TabIndex = 35;
             this.btnJualReset.Text = "Reset";
             this.btnJualReset.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnJualReset.Click += new System.EventHandler(this.btnJualReset_Click);
             // 
             // btnJualSubmit
             // 
@@ -414,13 +440,14 @@
             this.btnJualSubmit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnJualSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJualSubmit.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnJualSubmit.Location = new System.Drawing.Point(615, 197);
+            this.btnJualSubmit.Location = new System.Drawing.Point(615, 177);
             this.btnJualSubmit.Name = "btnJualSubmit";
             this.btnJualSubmit.Rounded = false;
             this.btnJualSubmit.Size = new System.Drawing.Size(106, 32);
             this.btnJualSubmit.TabIndex = 34;
             this.btnJualSubmit.Text = "Submit";
             this.btnJualSubmit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnJualSubmit.Click += new System.EventHandler(this.btnJualSubmit_Click);
             // 
             // txtJualTotal
             // 
@@ -428,27 +455,11 @@
             this.txtJualTotal.BackColor = System.Drawing.Color.Transparent;
             this.txtJualTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtJualTotal.ForeColor = System.Drawing.Color.White;
-            this.txtJualTotal.Location = new System.Drawing.Point(295, 260);
+            this.txtJualTotal.Location = new System.Drawing.Point(295, 240);
             this.txtJualTotal.Name = "txtJualTotal";
-            this.txtJualTotal.Size = new System.Drawing.Size(36, 17);
+            this.txtJualTotal.Size = new System.Drawing.Size(15, 17);
             this.txtJualTotal.TabIndex = 33;
-            this.txtJualTotal.Text = "Total";
-            // 
-            // numJualQty
-            // 
-            this.numJualQty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.numJualQty.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.numJualQty.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.numJualQty.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numJualQty.ForeColor = System.Drawing.Color.White;
-            this.numJualQty.Location = new System.Drawing.Point(298, 222);
-            this.numJualQty.Maximum = ((long)(9999999));
-            this.numJualQty.Minimum = ((long)(0));
-            this.numJualQty.Name = "numJualQty";
-            this.numJualQty.Size = new System.Drawing.Size(75, 30);
-            this.numJualQty.TabIndex = 32;
-            this.numJualQty.Text = "flatNumeric1";
-            this.numJualQty.Value = ((long)(0));
+            this.txtJualTotal.Text = "0";
             // 
             // txtJualPrice
             // 
@@ -456,11 +467,11 @@
             this.txtJualPrice.BackColor = System.Drawing.Color.Transparent;
             this.txtJualPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtJualPrice.ForeColor = System.Drawing.Color.White;
-            this.txtJualPrice.Location = new System.Drawing.Point(295, 197);
+            this.txtJualPrice.Location = new System.Drawing.Point(295, 177);
             this.txtJualPrice.Name = "txtJualPrice";
-            this.txtJualPrice.Size = new System.Drawing.Size(36, 17);
+            this.txtJualPrice.Size = new System.Drawing.Size(15, 17);
             this.txtJualPrice.TabIndex = 31;
-            this.txtJualPrice.Text = "Total";
+            this.txtJualPrice.Text = "0";
             // 
             // cmbJualProdName
             // 
@@ -473,10 +484,11 @@
             this.cmbJualProdName.FormattingEnabled = true;
             this.cmbJualProdName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.cmbJualProdName.ItemHeight = 18;
-            this.cmbJualProdName.Location = new System.Drawing.Point(298, 133);
+            this.cmbJualProdName.Location = new System.Drawing.Point(298, 113);
             this.cmbJualProdName.Name = "cmbJualProdName";
             this.cmbJualProdName.Size = new System.Drawing.Size(284, 24);
             this.cmbJualProdName.TabIndex = 30;
+            this.cmbJualProdName.SelectedIndexChanged += new System.EventHandler(this.cmbJualProdName_SelectedIndexChanged);
             // 
             // txtJualProdID
             // 
@@ -484,11 +496,11 @@
             this.txtJualProdID.BackColor = System.Drawing.Color.Transparent;
             this.txtJualProdID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtJualProdID.ForeColor = System.Drawing.Color.White;
-            this.txtJualProdID.Location = new System.Drawing.Point(295, 165);
+            this.txtJualProdID.Location = new System.Drawing.Point(295, 145);
             this.txtJualProdID.Name = "txtJualProdID";
-            this.txtJualProdID.Size = new System.Drawing.Size(36, 17);
+            this.txtJualProdID.Size = new System.Drawing.Size(102, 17);
             this.txtJualProdID.TabIndex = 29;
-            this.txtJualProdID.Text = "Total";
+            this.txtJualProdID.Text = "Select a Product";
             // 
             // txtJualCustID
             // 
@@ -496,11 +508,11 @@
             this.txtJualCustID.BackColor = System.Drawing.Color.Transparent;
             this.txtJualCustID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtJualCustID.ForeColor = System.Drawing.Color.White;
-            this.txtJualCustID.Location = new System.Drawing.Point(295, 102);
+            this.txtJualCustID.Location = new System.Drawing.Point(295, 82);
             this.txtJualCustID.Name = "txtJualCustID";
-            this.txtJualCustID.Size = new System.Drawing.Size(36, 17);
+            this.txtJualCustID.Size = new System.Drawing.Size(113, 17);
             this.txtJualCustID.TabIndex = 28;
-            this.txtJualCustID.Text = "Total";
+            this.txtJualCustID.Text = "Select a Customer";
             // 
             // cmbJualCustName
             // 
@@ -513,10 +525,11 @@
             this.cmbJualCustName.FormattingEnabled = true;
             this.cmbJualCustName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.cmbJualCustName.ItemHeight = 18;
-            this.cmbJualCustName.Location = new System.Drawing.Point(298, 68);
+            this.cmbJualCustName.Location = new System.Drawing.Point(298, 48);
             this.cmbJualCustName.Name = "cmbJualCustName";
             this.cmbJualCustName.Size = new System.Drawing.Size(284, 24);
             this.cmbJualCustName.TabIndex = 27;
+            this.cmbJualCustName.SelectedIndexChanged += new System.EventHandler(this.cmbJualCustName_SelectedIndexChanged);
             // 
             // txtJualID
             // 
@@ -524,7 +537,7 @@
             this.txtJualID.BackColor = System.Drawing.Color.Transparent;
             this.txtJualID.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtJualID.ForeColor = System.Drawing.Color.White;
-            this.txtJualID.Location = new System.Drawing.Point(295, 39);
+            this.txtJualID.Location = new System.Drawing.Point(295, 19);
             this.txtJualID.Name = "txtJualID";
             this.txtJualID.Size = new System.Drawing.Size(44, 17);
             this.txtJualID.TabIndex = 26;
@@ -536,7 +549,7 @@
             this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel14.ForeColor = System.Drawing.Color.White;
-            this.flatLabel14.Location = new System.Drawing.Point(107, 260);
+            this.flatLabel14.Location = new System.Drawing.Point(107, 240);
             this.flatLabel14.Name = "flatLabel14";
             this.flatLabel14.Size = new System.Drawing.Size(68, 17);
             this.flatLabel14.TabIndex = 25;
@@ -548,7 +561,7 @@
             this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel15.ForeColor = System.Drawing.Color.White;
-            this.flatLabel15.Location = new System.Drawing.Point(107, 197);
+            this.flatLabel15.Location = new System.Drawing.Point(107, 177);
             this.flatLabel15.Name = "flatLabel15";
             this.flatLabel15.Size = new System.Drawing.Size(72, 17);
             this.flatLabel15.TabIndex = 24;
@@ -560,7 +573,7 @@
             this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel16.ForeColor = System.Drawing.Color.White;
-            this.flatLabel16.Location = new System.Drawing.Point(107, 228);
+            this.flatLabel16.Location = new System.Drawing.Point(107, 208);
             this.flatLabel16.Name = "flatLabel16";
             this.flatLabel16.Size = new System.Drawing.Size(56, 17);
             this.flatLabel16.TabIndex = 23;
@@ -572,7 +585,7 @@
             this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel17.ForeColor = System.Drawing.Color.White;
-            this.flatLabel17.Location = new System.Drawing.Point(107, 165);
+            this.flatLabel17.Location = new System.Drawing.Point(107, 145);
             this.flatLabel17.Name = "flatLabel17";
             this.flatLabel17.Size = new System.Drawing.Size(78, 17);
             this.flatLabel17.TabIndex = 22;
@@ -584,7 +597,7 @@
             this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel18.ForeColor = System.Drawing.Color.White;
-            this.flatLabel18.Location = new System.Drawing.Point(107, 102);
+            this.flatLabel18.Location = new System.Drawing.Point(107, 82);
             this.flatLabel18.Name = "flatLabel18";
             this.flatLabel18.Size = new System.Drawing.Size(89, 17);
             this.flatLabel18.TabIndex = 21;
@@ -596,7 +609,7 @@
             this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(107, 133);
+            this.flatLabel19.Location = new System.Drawing.Point(107, 113);
             this.flatLabel19.Name = "flatLabel19";
             this.flatLabel19.Size = new System.Drawing.Size(101, 17);
             this.flatLabel19.TabIndex = 20;
@@ -608,7 +621,7 @@
             this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel20.ForeColor = System.Drawing.Color.White;
-            this.flatLabel20.Location = new System.Drawing.Point(107, 68);
+            this.flatLabel20.Location = new System.Drawing.Point(107, 48);
             this.flatLabel20.Name = "flatLabel20";
             this.flatLabel20.Size = new System.Drawing.Size(112, 17);
             this.flatLabel20.TabIndex = 19;
@@ -620,11 +633,53 @@
             this.flatLabel21.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel21.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.flatLabel21.ForeColor = System.Drawing.Color.White;
-            this.flatLabel21.Location = new System.Drawing.Point(107, 39);
+            this.flatLabel21.Location = new System.Drawing.Point(107, 19);
             this.flatLabel21.Name = "flatLabel21";
             this.flatLabel21.Size = new System.Drawing.Size(20, 17);
             this.flatLabel21.TabIndex = 18;
             this.flatLabel21.Text = "ID";
+            // 
+            // numBeliQty
+            // 
+            this.numBeliQty.Location = new System.Drawing.Point(287, 201);
+            this.numBeliQty.Name = "numBeliQty";
+            this.numBeliQty.Size = new System.Drawing.Size(66, 25);
+            this.numBeliQty.TabIndex = 38;
+            this.numBeliQty.ValueChanged += new System.EventHandler(this.numBeliQty_ValueChanged);
+            // 
+            // numJualQty
+            // 
+            this.numJualQty.Location = new System.Drawing.Point(298, 206);
+            this.numJualQty.Name = "numJualQty";
+            this.numJualQty.Size = new System.Drawing.Size(66, 25);
+            this.numJualQty.TabIndex = 40;
+            this.numJualQty.ValueChanged += new System.EventHandler(this.numJualQty_ValueChanged);
+            // 
+            // alertJual
+            // 
+            this.alertJual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.alertJual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alertJual.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.alertJual.kind = FlatUI.FlatAlertBox._Kind.Success;
+            this.alertJual.Location = new System.Drawing.Point(110, 269);
+            this.alertJual.Name = "alertJual";
+            this.alertJual.Size = new System.Drawing.Size(611, 42);
+            this.alertJual.TabIndex = 41;
+            this.alertJual.Text = "The data has been successfully submitted.";
+            this.alertJual.Visible = false;
+            // 
+            // alertBeli
+            // 
+            this.alertBeli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.alertBeli.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alertBeli.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.alertBeli.kind = FlatUI.FlatAlertBox._Kind.Success;
+            this.alertBeli.Location = new System.Drawing.Point(113, 261);
+            this.alertBeli.Name = "alertBeli";
+            this.alertBeli.Size = new System.Drawing.Size(611, 42);
+            this.alertBeli.TabIndex = 42;
+            this.alertBeli.Text = "The data has been successfully submitted.";
+            this.alertBeli.Visible = false;
             // 
             // FormTransaction
             // 
@@ -644,6 +699,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBeliQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numJualQty)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -665,7 +722,6 @@
         private FlatUI.FlatButton btnJualReset;
         private FlatUI.FlatButton btnJualSubmit;
         private FlatUI.FlatLabel txtJualTotal;
-        private FlatUI.FlatNumeric numJualQty;
         private FlatUI.FlatLabel txtJualPrice;
         private FlatUI.FlatComboBox cmbJualProdName;
         private FlatUI.FlatLabel txtJualProdID;
@@ -682,7 +738,6 @@
         private FlatUI.FlatLabel flatLabel21;
         private FlatUI.FlatButton btnBeliReset;
         private FlatUI.FlatButton btnBeliSubmit;
-        private FlatUI.FlatNumeric numBeliQty;
         private FlatUI.FlatComboBox cmbBeliProdName;
         private FlatUI.FlatComboBox cmbBeliSuppName;
         private FlatUI.FlatLabel txtBeliTotal;
@@ -690,5 +745,11 @@
         private FlatUI.FlatLabel txtBeliSuppID;
         private FlatUI.FlatLabel txtBeliProdID;
         private FlatUI.FlatLabel txtBeliID;
+        private FlatUI.FlatMini flatMini1;
+        private FlatUI.FlatClose flatClose1;
+        private System.Windows.Forms.NumericUpDown numBeliQty;
+        private System.Windows.Forms.NumericUpDown numJualQty;
+        private FlatUI.FlatAlertBox alertBeli;
+        private FlatUI.FlatAlertBox alertJual;
     }
 }
