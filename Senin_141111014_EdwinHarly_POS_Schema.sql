@@ -34,7 +34,7 @@ CREATE TABLE `barang` (
   `Created_on` datetime NOT NULL,
   `Updates_on` datetime NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=99518 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `barang` (
 
 LOCK TABLES `barang` WRITE;
 /*!40000 ALTER TABLE `barang` DISABLE KEYS */;
-INSERT INTO `barang` VALUES (1,'T001','Test',2,5000.00,6000.00,'2016-12-01 21:33:47','2016-12-01 21:33:47'),(2,'T004','Rewdf',15,12000.00,13000.00,'2016-12-20 22:16:20','2016-12-21 00:15:50'),(3,'T003','FDSFAS',3,5000.00,6000.00,'2016-12-20 22:17:30','2016-12-20 22:17:30'),(4,'T009','xcvf',6,14000.00,20000.00,'2016-12-20 22:18:54','2016-12-20 22:18:54');
+INSERT INTO `barang` VALUES (1,'T001','Test',2,5000.00,6000.00,'2016-12-01 21:33:47','2016-12-01 21:33:47'),(2,'T004','Rewdf',15,12000.00,13000.00,'2016-12-20 22:16:20','2016-12-21 00:15:50'),(3,'T003','FDSFAS',3,5000.00,6000.00,'2016-12-20 22:17:30','2016-12-20 22:17:30'),(4,'T009','xcvf',6,14000.00,20000.00,'2016-12-20 22:18:54','2016-12-20 22:18:54'),(99517,'G009','Akua',40,5000.00,3000.00,'2016-12-30 22:38:01','2016-12-30 22:38:01');
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,11 +59,7 @@ CREATE TABLE `beli` (
   `suppid` int(15) NOT NULL,
   `prodid` int(15) NOT NULL,
   `quantity` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `suppid_idx` (`suppid`),
-  KEY `proid_idx` (`prodid`),
-  CONSTRAINT `proid` FOREIGN KEY (`prodid`) REFERENCES `barang` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `suppid` FOREIGN KEY (`suppid`) REFERENCES `supplier` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -118,11 +114,7 @@ CREATE TABLE `jual` (
   `custid` int(11) NOT NULL,
   `prodid` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `ID_idx` (`prodid`),
-  KEY `custid_idx` (`custid`),
-  CONSTRAINT `custid` FOREIGN KEY (`custid`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `prodid` FOREIGN KEY (`prodid`) REFERENCES `barang` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -132,6 +124,7 @@ CREATE TABLE `jual` (
 
 LOCK TABLES `jual` WRITE;
 /*!40000 ALTER TABLE `jual` DISABLE KEYS */;
+INSERT INTO `jual` VALUES (311999,586609,12000,4);
 /*!40000 ALTER TABLE `jual` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +154,7 @@ CREATE TABLE `supplier` (
 
 LOCK TABLES `supplier` WRITE;
 /*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
-INSERT INTO `supplier` VALUES (887540,'Gramedia','Gajah mada','20898','06184684648','gramedia@email.com','2016-12-22 00:12:38','2016-12-22 00:12:38');
+INSERT INTO `supplier` VALUES (653798,'Amoi','Jln. Tengku Amir Hamzah No.5','20122','085270347966','amoi12@yahoo.com','2016-12-30 22:03:26','2016-12-30 22:03:26'),(887540,'Gramedia','Gajah mada','20898','06184684648','gramedia@email.com','2016-12-22 00:12:38','2016-12-22 00:12:38');
 /*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -174,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-29 22:31:36
+-- Dump completed on 2016-12-30 23:07:42
