@@ -258,6 +258,13 @@ namespace Latihan_POS
                 cmbBeliSuppName.Items.Add(lstSupplier[i].name);
             }
         }
+        public void resetBeliPage()
+        {
+            refreshCmbBeliProduct();
+            refreshCmbSupplier();
+            txtBeliID.Text = generateIDBeli();
+
+        }
 
         private void cmbBeliProdName_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -393,14 +400,19 @@ namespace Latihan_POS
 
                         if (comm.ExecuteNonQuery() == 1)
                         {
-                            using (new CenterWinDialog(this))
-                            {
-
-                            }
-                            alertBeli.Visible = true;
-
+                            
+                            
+                            string sql2 = "update barang set jumlahawal = jumlahawal + @qty where id = @id;";
                             //txtAddName.Focus();
-
+                            using (MySqlCommand comm2 = new MySqlCommand(sql2, conn))
+                            {
+                                comm2.Parameters.AddWithValue("@id", txtBeliProdID.Text);
+                                comm2.Parameters.AddWithValue("@qty", numBeliQty.Text);
+                                if (comm2.ExecuteNonQuery() == 1)
+                                {
+                                    alertBeli.Visible = true;
+                                }
+                            }
                             
                         }
                         else
@@ -461,10 +473,22 @@ namespace Latihan_POS
                             {
 
                             }
-                            alertJual.Visible = true;
+                            //alertJual.Visible = true;
 
                             //txtAddName.Focus();
 
+                            string sql2 = "update barang set jumlahawal = jumlahawal - @qty where id = @id and jumlahawal >= @qty;";
+                            //txtAddName.Focus();
+                            using (MySqlCommand comm2 = new MySqlCommand(sql2, conn))
+                            {
+                                comm2.Parameters.AddWithValue("@id", txtBeliProdID.Text);
+                                comm2.Parameters.AddWithValue("@qty", numBeliQty.Text);
+                                if (comm2.ExecuteNonQuery() == 1)
+                                {
+                                    alertBeli.Visible = true;
+                                   
+                                }
+                            }
 
                         }
                         else

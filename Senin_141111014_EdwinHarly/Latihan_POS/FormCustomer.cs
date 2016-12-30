@@ -356,9 +356,13 @@ namespace Latihan_POS
 
             }
         }
+
+
         #endregion
 
+        private void addProductsPage_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

@@ -33,6 +33,8 @@
             this.flatClose1 = new FlatUI.FlatClose();
             this.flatTabControl1 = new FlatUI.FlatTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.alertBeli = new FlatUI.FlatAlertBox();
+            this.numBeliQty = new System.Windows.Forms.NumericUpDown();
             this.btnBeliReset = new FlatUI.FlatButton();
             this.btnBeliSubmit = new FlatUI.FlatButton();
             this.cmbBeliProdName = new FlatUI.FlatComboBox();
@@ -51,6 +53,8 @@
             this.flatLabel2 = new FlatUI.FlatLabel();
             this.flatLabel1 = new FlatUI.FlatLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.alertJual = new FlatUI.FlatAlertBox();
+            this.numJualQty = new System.Windows.Forms.NumericUpDown();
             this.btnJualReset = new FlatUI.FlatButton();
             this.btnJualSubmit = new FlatUI.FlatButton();
             this.txtJualTotal = new FlatUI.FlatLabel();
@@ -68,15 +72,11 @@
             this.flatLabel19 = new FlatUI.FlatLabel();
             this.flatLabel20 = new FlatUI.FlatLabel();
             this.flatLabel21 = new FlatUI.FlatLabel();
-            this.numBeliQty = new System.Windows.Forms.NumericUpDown();
-            this.numJualQty = new System.Windows.Forms.NumericUpDown();
-            this.alertJual = new FlatUI.FlatAlertBox();
-            this.alertBeli = new FlatUI.FlatAlertBox();
             this.formSkin1.SuspendLayout();
             this.flatTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numBeliQty)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numJualQty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,6 +168,27 @@
             this.tabPage1.Size = new System.Drawing.Size(815, 319);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Purchase";
+            // 
+            // alertBeli
+            // 
+            this.alertBeli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.alertBeli.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alertBeli.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.alertBeli.kind = FlatUI.FlatAlertBox._Kind.Success;
+            this.alertBeli.Location = new System.Drawing.Point(113, 261);
+            this.alertBeli.Name = "alertBeli";
+            this.alertBeli.Size = new System.Drawing.Size(611, 42);
+            this.alertBeli.TabIndex = 42;
+            this.alertBeli.Text = "The data has been successfully submitted.";
+            this.alertBeli.Visible = false;
+            // 
+            // numBeliQty
+            // 
+            this.numBeliQty.Location = new System.Drawing.Point(287, 201);
+            this.numBeliQty.Name = "numBeliQty";
+            this.numBeliQty.Size = new System.Drawing.Size(66, 25);
+            this.numBeliQty.TabIndex = 38;
+            this.numBeliQty.ValueChanged += new System.EventHandler(this.numBeliQty_ValueChanged);
             // 
             // btnBeliReset
             // 
@@ -419,6 +440,27 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sale";
             // 
+            // alertJual
+            // 
+            this.alertJual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.alertJual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alertJual.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.alertJual.kind = FlatUI.FlatAlertBox._Kind.Success;
+            this.alertJual.Location = new System.Drawing.Point(110, 269);
+            this.alertJual.Name = "alertJual";
+            this.alertJual.Size = new System.Drawing.Size(611, 42);
+            this.alertJual.TabIndex = 41;
+            this.alertJual.Text = "The data has been successfully submitted.";
+            this.alertJual.Visible = false;
+            // 
+            // numJualQty
+            // 
+            this.numJualQty.Location = new System.Drawing.Point(298, 206);
+            this.numJualQty.Name = "numJualQty";
+            this.numJualQty.Size = new System.Drawing.Size(66, 25);
+            this.numJualQty.TabIndex = 40;
+            this.numJualQty.ValueChanged += new System.EventHandler(this.numJualQty_ValueChanged);
+            // 
             // btnJualReset
             // 
             this.btnJualReset.BackColor = System.Drawing.Color.Transparent;
@@ -639,48 +681,6 @@
             this.flatLabel21.TabIndex = 18;
             this.flatLabel21.Text = "ID";
             // 
-            // numBeliQty
-            // 
-            this.numBeliQty.Location = new System.Drawing.Point(287, 201);
-            this.numBeliQty.Name = "numBeliQty";
-            this.numBeliQty.Size = new System.Drawing.Size(66, 25);
-            this.numBeliQty.TabIndex = 38;
-            this.numBeliQty.ValueChanged += new System.EventHandler(this.numBeliQty_ValueChanged);
-            // 
-            // numJualQty
-            // 
-            this.numJualQty.Location = new System.Drawing.Point(298, 206);
-            this.numJualQty.Name = "numJualQty";
-            this.numJualQty.Size = new System.Drawing.Size(66, 25);
-            this.numJualQty.TabIndex = 40;
-            this.numJualQty.ValueChanged += new System.EventHandler(this.numJualQty_ValueChanged);
-            // 
-            // alertJual
-            // 
-            this.alertJual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.alertJual.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.alertJual.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.alertJual.kind = FlatUI.FlatAlertBox._Kind.Success;
-            this.alertJual.Location = new System.Drawing.Point(110, 269);
-            this.alertJual.Name = "alertJual";
-            this.alertJual.Size = new System.Drawing.Size(611, 42);
-            this.alertJual.TabIndex = 41;
-            this.alertJual.Text = "The data has been successfully submitted.";
-            this.alertJual.Visible = false;
-            // 
-            // alertBeli
-            // 
-            this.alertBeli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.alertBeli.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.alertBeli.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.alertBeli.kind = FlatUI.FlatAlertBox._Kind.Success;
-            this.alertBeli.Location = new System.Drawing.Point(113, 261);
-            this.alertBeli.Name = "alertBeli";
-            this.alertBeli.Size = new System.Drawing.Size(611, 42);
-            this.alertBeli.TabIndex = 42;
-            this.alertBeli.Text = "The data has been successfully submitted.";
-            this.alertBeli.Visible = false;
-            // 
             // FormTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -697,9 +697,9 @@
             this.flatTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBeliQty)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBeliQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numJualQty)).EndInit();
             this.ResumeLayout(false);
 

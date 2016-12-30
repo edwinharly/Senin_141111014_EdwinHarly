@@ -70,8 +70,7 @@
             this.viewProductsPage = new System.Windows.Forms.TabPage();
             this.DGVCustomer = new System.Windows.Forms.DataGridView();
             this.flatMini1 = new FlatUI.FlatMini();
-            this.flatMax1 = new FlatUI.FlatMax();
-            this.flatClose1 = new FlatUI.FlatClose();
+            this.flatButton1 = new FlatUI.FlatButton();
             this.formSkin1.SuspendLayout();
             this.customersTabControl.SuspendLayout();
             this.addProductsPage.SuspendLayout();
@@ -87,8 +86,6 @@
             this.formSkin1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
             this.formSkin1.Controls.Add(this.customersTabControl);
             this.formSkin1.Controls.Add(this.flatMini1);
-            this.formSkin1.Controls.Add(this.flatMax1);
-            this.formSkin1.Controls.Add(this.flatClose1);
             this.formSkin1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formSkin1.FlatColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.formSkin1.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -123,6 +120,7 @@
             // addProductsPage
             // 
             this.addProductsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.addProductsPage.Controls.Add(this.flatButton1);
             this.addProductsPage.Controls.Add(this.txtAddID);
             this.addProductsPage.Controls.Add(this.addAlertBox);
             this.addProductsPage.Controls.Add(this.btnAddCancel);
@@ -144,6 +142,7 @@
             this.addProductsPage.Size = new System.Drawing.Size(805, 318);
             this.addProductsPage.TabIndex = 6;
             this.addProductsPage.Text = "New";
+            this.addProductsPage.Click += new System.EventHandler(this.addProductsPage_Click);
             // 
             // txtAddID
             // 
@@ -179,7 +178,7 @@
             this.btnAddCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnAddCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCancel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnAddCancel.Location = new System.Drawing.Point(601, 206);
+            this.btnAddCancel.Location = new System.Drawing.Point(601, 168);
             this.btnAddCancel.Name = "btnAddCancel";
             this.btnAddCancel.Rounded = false;
             this.btnAddCancel.Size = new System.Drawing.Size(106, 32);
@@ -195,7 +194,7 @@
             this.btnAddSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnAddSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddSave.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnAddSave.Location = new System.Drawing.Point(601, 168);
+            this.btnAddSave.Location = new System.Drawing.Point(601, 130);
             this.btnAddSave.Name = "btnAddSave";
             this.btnAddSave.Rounded = false;
             this.btnAddSave.Size = new System.Drawing.Size(106, 32);
@@ -719,38 +718,26 @@
             this.flatMini1.BackColor = System.Drawing.Color.White;
             this.flatMini1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
             this.flatMini1.Font = new System.Drawing.Font("Marlett", 12F);
-            this.flatMini1.Location = new System.Drawing.Point(744, 3);
+            this.flatMini1.Location = new System.Drawing.Point(791, 3);
             this.flatMini1.Name = "flatMini1";
             this.flatMini1.Size = new System.Drawing.Size(18, 18);
             this.flatMini1.TabIndex = 2;
             this.flatMini1.Text = "flatMini1";
             this.flatMini1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // flatMax1
+            // flatButton1
             // 
-            this.flatMax1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatMax1.BackColor = System.Drawing.Color.White;
-            this.flatMax1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.flatMax1.Font = new System.Drawing.Font("Marlett", 12F);
-            this.flatMax1.Location = new System.Drawing.Point(768, 4);
-            this.flatMax1.Name = "flatMax1";
-            this.flatMax1.Size = new System.Drawing.Size(18, 18);
-            this.flatMax1.TabIndex = 1;
-            this.flatMax1.Text = "flatMax1";
-            this.flatMax1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // flatClose1
-            // 
-            this.flatClose1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatClose1.BackColor = System.Drawing.Color.White;
-            this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
-            this.flatClose1.Location = new System.Drawing.Point(792, 4);
-            this.flatClose1.Name = "flatClose1";
-            this.flatClose1.Size = new System.Drawing.Size(18, 18);
-            this.flatClose1.TabIndex = 0;
-            this.flatClose1.Text = "flatClose1";
-            this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton1.Location = new System.Drawing.Point(601, 206);
+            this.flatButton1.Name = "flatButton1";
+            this.flatButton1.Rounded = false;
+            this.flatButton1.Size = new System.Drawing.Size(106, 32);
+            this.flatButton1.TabIndex = 16;
+            this.flatButton1.Text = "Close";
+            this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
             // FormCustomer
             // 
@@ -780,8 +767,6 @@
 
         private FlatUI.FormSkin formSkin1;
         private FlatUI.FlatMini flatMini1;
-        private FlatUI.FlatMax flatMax1;
-        private FlatUI.FlatClose flatClose1;
         private FlatUI.FlatTabControl customersTabControl;
         private System.Windows.Forms.TabPage addProductsPage;
         private FlatUI.FlatLabel txtAddID;
@@ -822,5 +807,6 @@
         private FlatUI.FlatLabel flatLabel16;
         private FlatUI.FlatLabel flatLabel17;
         private FlatUI.FlatLabel flatLabel18;
+        private FlatUI.FlatButton flatButton1;
     }
 }
